@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --principal: #272a57;
+  --fondo: #0d4b92a4;
+}
+
 body {
   font-family: Montserrat;
   display: flex;
@@ -8,15 +13,14 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-image: url("/src/main/resources/templates/media/fondo.webp");
-
+  background-image: url("/src/main/resources/templates/media/fondologin.png");
   background-size: cover;
   background-position: center;
 }
 
 .contenedorRegistro {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.756);
+  background-color: rgba(0, 0, 0, 0.57);
   width: 45%;
   height: auto;
   text-align: center;
@@ -88,11 +92,11 @@ body {
   border-radius: 10px;
   transition: background-color 0.3s;
   width: 40%;
-  background-color: #fc4472;
+  background-color: var(--principal);
 }
 
 .btnRegistrar:hover {
-  background-color: #e62757;
+  background-color: #41468f;
 }
 
 .btnCancelar {
@@ -102,9 +106,9 @@ body {
   border-radius: 10px;
   transition: background-color 0.3s;
   width: 100%;
-  background-color: #9c4057;
+  background-color: var(--principal);
 }
 
 .btnCancelar:hover {
-  background-color: #e62757;
+  background-color: #41468f;
 }

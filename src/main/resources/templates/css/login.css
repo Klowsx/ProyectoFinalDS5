@@ -19,24 +19,14 @@ body {
 }
 #logo {
   width: 100px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  padding: 15px 0px 15px;
 }
 .contenedorLogin {
   background-color: rgba(0, 0, 0, 0.57);
-  width: 35%;
+  width: 45%;
   height: 50%;
   text-align: center;
   border-radius: 10px;
-}
-
-.contIniciar {
-  color: white;
-  align-items: center;
-}
-
-.contIniciar h1 {
-  font-weight: 200;
 }
 
 .formularioInicioSesion {
@@ -70,20 +60,6 @@ body {
   cursor: pointer;
 }
 
-.contIniciar button {
-  width: 49.4%;
-  padding: 15px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0);
-  border-style: none;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-}
-
-.contIniciar button:hover {
-  background-color: #fc4472;
-}
-
 .cuadroTexto {
   padding: 15px;
   margin-bottom: 5px;
@@ -101,37 +77,40 @@ body {
 }
 
 .btnIniciar {
-  background-image: linear-gradient(135deg, #008aff, #86d472);
   border-radius: 6px;
-  box-sizing: border-box;
-  color: #ffffff;
-
-  height: 50px;
-  font-size: 1.4em;
-  font-weight: 600;
+  text-decoration: none;
+  height: 40px;
+  font-size: 1em;
   padding: 4px;
-  position: relative;
-  z-index: 2;
   border: none;
   cursor: pointer;
   text-align: center;
+  margin-top: 10px;
+  background-color: var(--principal);
+  color: #fff;
+  margin-bottom: 15px;
 }
 
 .btnIniciar:hover {
   color: #fff;
+  background-color: #41468f;
+  transition: 0.4s;
 }
 
-.btnIniciar .btnIniciarSpan {
-  align-items: center;
-  background: #0e0e10;
+.regbtn {
   border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  transition: background 0.5s ease;
-  width: 100%;
+  text-decoration: none;
+  height: 40px;
+  background-color: var(--principal);
+  color: #fff;
+  font-size: 1em;
+
+  border: none;
+  cursor: pointer;
+  padding: 10px;
 }
 
-.btnIniciar:hover .btnIniciarSpan {
-  background: transparent;
+.regbtn:hover {
+  background-color: #41468f;
+  transition: 0.4s;
 }

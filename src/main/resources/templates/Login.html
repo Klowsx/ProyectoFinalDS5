@@ -11,20 +11,18 @@
 
 <body>
   <div class="contenedorLogin">
-    <div class="contIniciar">
-      <img src="media/logo.png" alt="" id="logo">
-      <form onsubmit="event.preventDefault(); iniciarSesion();" method="POST" class="formularioInicioSesion">
-        <input type="email" name="correo" placeholder="Correo electrónico" class="cuadroTexto" id="correo" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" class="cuadroTexto" id="contrasena" required>
+    <img src="media/logo.png" alt="" id="logo">
+    <form onsubmit="event.preventDefault(); iniciarSesion();" method="POST" class="formularioInicioSesion">
+      <input type="email" name="correo" placeholder="Correo electrónico" class="cuadroTexto" id="correo" required>
+      <input type="password" name="contrasena" placeholder="Contraseña" class="cuadroTexto" id="contrasena" required>
 
-        <a href="#" class="bn89">
-          <input type="submit" value="Iniciar sesión" class="btnIniciar" style="color: white;">
-        </a>
-      </form>
-      <a href="#" class="bn89" id="Registrarsebtn">
-        <input type="submit" value="Registrarse" class="btnIniciar" style="color: white;">
+      <a href="#" class="bn89">
+        <input type="submit" value=" Iniciar sesión " class="btnIniciar">
       </a>
-    </div>
+    </form>
+    <a class="regbtn" href="Registro.html">
+      <span>Registrarse</span>
+    </a>
   </div>
 
   <div id="mensajeErrorBarra" class="mensaje-error-barra">
