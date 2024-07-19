@@ -4,6 +4,6 @@ function navigateToNextPage() {
     container.style.transform = 'translateX(-100vw)';
     
     setTimeout(() => {
-        window.location.href = 'nextpage.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
+        window.location.href = 'src/main/resources/templates/practicaTipoDato.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
     }, 500);
 }
