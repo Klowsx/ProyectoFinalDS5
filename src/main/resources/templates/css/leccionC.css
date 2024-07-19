@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.message {
+    font-size: 2.7em;
+    margin-bottom: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gifkillerbeans {
+    width: 600px;
+    height: auto;
+}
+
+.confetti-cannon {
+    position: absolute;
+    width: 300px;
+    height: auto;
+}
+
+.left-cannon {
+    left: -40px;
+    bottom: -40px;
+   
+}
+
+.right-cannon {
+    right: -40px;
+    bottom: -40px;
+   rotate: 270deg;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0;
+}
+
+@keyframes confetti-splash-left-diagonal {
+    0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+    100% { transform: translate(100vw, -100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes confetti-splash-right-diagonal {
+    0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+    100% { transform: translate(-100vw, -100vh) rotate(-720deg); opacity: 0; }
+}
+
+.left-diagonal .confetti-piece {
+    animation: confetti-splash-left-diagonal 2s ease-out;
+}
+
+.right-diagonal .confetti-piece {
+    animation: confetti-splash-right-diagonal 2s ease-out;
+}
