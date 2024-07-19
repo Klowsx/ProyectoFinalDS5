@@ -11,26 +11,32 @@
         <img src="media/logo.png" alt="Logo Edublocks" class="logo">
     </nav>
     <div class="container">
-        <div class="content">
-            <h2>Completa los Tipos de Datos</h2>
-            <p>Instrucciones:<br>1. Completa el tipo de dato correcto en Java para cada variable.</p>
-            <div class="quiz">
-                <div class="question">
-                    <input type="text" id="edad-type" class="answer-box" ondrop="drop(event)" ondragover="allowDrop(event)"> edad = 25;
+        <div class="content-and-image">
+            <div class="content">
+                <h2>Completa los Tipos de Datos</h2>
+                <p>Instrucciones:<br>1. Completa el tipo de dato correcto en Java para cada variable.</p>
+                <div class="quiz">
+                    <div class="question">
+                        <input type="text" id="edad-type" class="answer-box" ondrop="drop(event)" ondragover="allowDrop(event)"> edad = 25;
+                    </div>
+                    <div class="question">
+                        String nombre = <input type="text" id="nombre-type" class="answer-box" ondrop="drop(event)" ondragover="allowDrop(event)">';
+                    </div>
+                    <div class="question">
+                        <input type="text" id="precio-type" class="answer-box" ondrop="drop(event)" ondragover="allowDrop(event)"> precio = 99.99;
+                    </div>
+                    <div class="answer-options">
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="int">int</div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="string">"Ana"</div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="double">double</div>
+                    </div>
+                    <button onclick="checkAnswers()" class="check-btn">Verificar</button>
+                    <p class="drag-instructions">Arrastra a la respuesta correcta</p>
+                    <p id="feedback" class="feedback"></p>
                 </div>
-                <div class="question">
-                    String nombre = <input type="text" id="nombre-type" class="answer-box" ondrop="drop(event)" ondragover="allowDrop(event)">';
-                </div>
-                <div class="question">
-                    <input type="text" id="precio-type" class="answer-box" ondrop="drop(event)" ondragover="allowDrop(event)"> precio = 99.99;
-                </div>
-                <div class="answer-options">
-                    <div class="option" draggable="true" ondragstart="drag(event)" id="int">int</div>
-                    <div class="option" draggable="true" ondragstart="drag(event)" id="string">"Ana"</div>
-                    <div class="option" draggable="true" ondragstart="drag(event)" id="double">double</div>
-                </div>
-                <button onclick="checkAnswers()" class="check-btn">Verificar</button>
-                <p id="feedback" class="feedback"></p>
+            </div>
+            <div class="image-container">
+                <img src="media/pencil.png" alt="Imagen" class="placeholder-image"> <!-- Cambia 'placeholder.png' por la imagen que desees -->
             </div>
         </div>
         <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>

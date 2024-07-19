@@ -31,6 +31,16 @@ function drop(ev) {
     draggedElement.remove();
 }
 
+function showWarningMessage(message) {
+    const feedback = document.getElementById('feedback');
+    feedback.textContent = message;
+    feedback.style.color = 'red';
+
+    setTimeout(() => {
+        feedback.textContent = '';
+    }, 1000); // Mensaje se muestra durante 5 segundos
+}
+
 function checkAnswers() {
     const answers = {
         'edad-type': 'int',
@@ -38,12 +48,15 @@ function checkAnswers() {
     };
     
     let allCorrect = true;
-    
+    let anyFieldEmpty = false;
+
     for (let id in answers) {
         const userAnswer = document.getElementById(id).value.trim();
         const correctAnswer = answers[id];
         
-        if (userAnswer === correctAnswer) {
+        if (userAnswer === '') {
+            anyFieldEmpty = true;
+        } else if (userAnswer === correctAnswer) {
             document.getElementById(id).style.backgroundColor = 'lightgreen';
         } else {
             document.getElementById(id).style.backgroundColor = 'lightcoral';
@@ -56,15 +69,20 @@ function checkAnswers() {
     const nombreTypeValue = nombreTypeInput.value.trim();
     const isNombreValid = /^".*"$/.test(nombreTypeValue); // Checks if the input is enclosed in quotes
 
-    if (isNombreValid) {
+    if (nombreTypeValue === '') {
+        anyFieldEmpty = true;
+    } else if (isNombreValid) {
         nombreTypeInput.style.backgroundColor = 'lightgreen';
     } else {
         nombreTypeInput.style.backgroundColor = 'lightcoral';
         allCorrect = false;
     }
-    
+
     const feedback = document.getElementById('feedback');
-    if (allCorrect) {
+    
+    if (anyFieldEmpty) {
+        showWarningMessage('Debe llenar los campos');
+    } else if (allCorrect) {
         feedback.textContent = '¡Todas las respuestas son correctas!';
         feedback.style.color = 'green';
     } else {
