@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --principal: #272a57;
+  --fondo: #0d4b92a4;
+}
+
+body {
+  font-family: Montserrat;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden; /* Evita el desbordamiento global */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--principal);
+  color: white;
+  width: 100%;
+}
+
+nav img {
+  width: 70px;
+}
+
+#moneda {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav .navDer button {
+  margin-right: 15px;
+}
+
+.btnNavAdmin {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+.btnNavAdmin:hover {
+  background-color: #3e8e41;
+}
+
+.btnNavAdmin:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8%; /* Asegura que el contenedor esté debajo de la navegación fija */
+    flex: 1;
+    margin-bottom: 4%;
+    overflow: hidden; /* Evita el desbordamiento */
+    position: relative; /* Necesario para posicionar el botón de siguiente */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.code-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.drop-zone {
+    background-color: #e0e0e0;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Para asegurar que el contenido se alinee correctamente */
+}
+
+.placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.option:hover {
+    background-color: #0056b3;
+}
+
+.next-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: background-color 0.3s;
+}
+
+.next-btn:hover {
+    background-color: #0056b3;
+}
+
+.success-icon {
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    width: 10%;
+    height: auto; /* Cambiado para mantener las proporciones del icono */
+}

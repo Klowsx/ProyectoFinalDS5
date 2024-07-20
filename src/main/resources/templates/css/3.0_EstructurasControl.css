@@ -1,26 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --principal: #272a57;
+  --fondo: #0d4b92a4;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ebe8e8d2;
+  font-family: Montserrat;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  align-items: center;
 }
 
 nav {
-    width: 100%;
-    height: 80px;
-    background-color: #003366;
-    display: flex;
-    justify-content: baseline;
-    align-items: baseline;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--principal);
+  color: white;
+  width: 100%;
+}
+
+nav img {
+  width: 70px;
+}
+
+#moneda {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav .navDer button {
+  margin-right: 15px;
+}
+
+.btnNavAdmin {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+.btnNavAdmin:hover {
+  background-color: #3e8e41;
+}
+
+.btnNavAdmin:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
 }
 
 .logo {

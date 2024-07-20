@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Completa la Definición de Métodos</title>
+    <link rel="stylesheet" href="css/4.1_PracticaDefinicion.css">
 </head>
-
 <body>
-
+    <nav>
+        <div class="navIzq">
+            <img src="media/logo.png" alt="">
+            <h3>Nombre usuario</h3>
+            <img src="media/moneditas.png" alt="" id="moneda">
+            <h4>300</h4>
+        </div>
+        <div class="navDer">
+            <a class="btnNavAdmin" href="#">Administrador</a>
+            <a class="btnNavAdmin" href="#">Ayuda</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>Completa la definición y estructura de métodos</h2>
+            <p>Instrucciones:</p>
+            <p>Mueve las piezas al lugar correcto para completar el método</p>
+            <div class="code-container" id="codeContainer">
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p>public void miMetodo() {</p>
+                </div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p>System.out.println("Hola Mundo");</p>
+                </div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p>}</p>
+                </div>
+            </div>
+            <div class="options" id="options">
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option1">public void miMetodo() {</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">System.out.println("Hola Mundo");</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option3">}</button>
+            </div>
+        </div>
+        <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
+        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+    </div>
+    <script src="js/4.1_PracticaDefinicion.js"></script>
 </body>
-
 </html>
