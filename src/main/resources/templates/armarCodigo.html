@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armar Código Completo en Java</title>
+    <link rel="stylesheet" href="css/armarC.css">
+</head>
+<body>
+    <nav>
+        <img src="media/logo.png" alt="Logo Edublocks" class="logo">
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>3.3 Codificación</h2>
+            <p>En base al enunciado tienes que codificar el problema utilizando las estructuras proporcionadas (puedes probarlo en tu editor de código si lo deseas):</p>
+            <p>Estás en una cueva con dos caminos. Si eliges el camino de la izquierda, te encuentras con un dragón. Si eliges el camino de la derecha, encuentras un tesoro. ¿Qué decides?</p>
+            <div class="code-container">
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="String camino = "></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="&quot;Escoge tu camino&quot;;"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="if (camino.equals("></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="&quot;izquierda&quot;)) {"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="System.out.println("></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="&quot;Te encuentras con un dragón.&quot;);"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="} else {"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="System.out.println("></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="&quot;Encuentras un tesoro.&quot;);"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="}"></div>
+            </div>
+            <div class="options" id="options">
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option1">String camino = </button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">"Escoge tu camino";</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option3">if (camino.equals(</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option4">"izquierda")) {</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option5">System.out.println(</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option6">"Te encuentras con un dragón.");</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option7">} else {</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option8">System.out.println(</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option9">"Encuentras un tesoro.");</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option10">}</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/armarC.js"></script>
+</body>
+</html>

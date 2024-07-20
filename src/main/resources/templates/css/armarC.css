@@ -6,8 +6,9 @@ body {
     padding: 0;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ebe8e8d2;
+    box-sizing: border-box;
 }
 
 nav {
@@ -21,6 +22,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -30,7 +32,7 @@ nav {
 
 .container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -38,16 +40,42 @@ nav {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%; /* Ensures container is below the fixed nav */
+    margin: 100px auto;
     flex: 1;
-    margin-bottom: 4%;
-    overflow: hidden; /* Prevents overflow */
-    position: relative; /* Needed for positioning the next button */
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 400px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin-top: 80px;
+        min-height: 250px;
+    }
 }
 
 .content {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .code-container {
@@ -55,20 +83,27 @@ nav {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 .drop-zone {
     background-color: #e0e0e0;
     border: 1px dashed #ccc;
-    padding: 2px 5px;
-    display: inline-block;
-    min-width: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 150px;
     text-align: center;
+    margin: 5px;
+    flex: 1 1 calc(33.333% - 10px);
+    height: 60px;
 }
 
 .options {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 10px;
 }
@@ -78,42 +113,20 @@ nav {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 60px;
+}
+
+.option.correct {
+    background-color: lightgreen;
+    cursor: default;
 }
 
 .option:hover {
     background-color: #0056b3;
-}
-
-.next-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
-}
-
-.next-btn:hover {
-    background-color: #0056b3;
-}
-
-.success-icon {
-    position: absolute;
-    display: block;
-    top: 20px;
-    right: 20px;
-    width: 10%;
-    height: fit-content
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de Bucle en Java</title>
+    <link rel="stylesheet" href="css/completarBucles.css">
+</head>
+<body>
+    <nav>
+        <img src="media/logo.png" alt="Logo Edublocks" class="logo">
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>Completa las estructuras de bucle</h2>
+            <p>Instrucciones:</p>
+            <p>1. Mueve las opciones al lugar correcto</p>
+            <div class="code-container">
+                <pre>
+int count = 0;
+while (count < <span class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">__</span>) {
+    System.out.println("Contador: " + count);
+    count++;
+}
+                </pre>
+            </div>
+            <div class="options" id="options">
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option1">10</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">count &lt; 10</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option3">5</button>
+            </div>
+        </div>
+        <img src="media/llaves2.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
+        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+    </div>
+    <script src="js/completarBucles.js"></script>
+</body>
+</html>
