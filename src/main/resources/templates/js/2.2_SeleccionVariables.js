@@ -1,50 +1,70 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const options = document.querySelectorAll(".option");
-    const correctAnswers = {
-        question1: "c) String nombre = \"Ana\";",
-        question2: "b) boolean esEstudiante = true"
-    };
+// Selecciona todos los botones de respuesta
+const options = document.querySelectorAll(".option");
 
-    options.forEach(option => {
-        option.addEventListener("click", () => {
-            const questionElement = option.closest('.question');
-            const questionId = questionElement.id;
-            const correctAnswer = correctAnswers[questionId];
-            const isAlreadyAnswered = questionElement.classList.contains('answered');
-
-            if (isAlreadyAnswered) return;
-
-            if (option.textContent.trim() === correctAnswer.trim()) {
-                option.style.backgroundColor = "green";
-                questionElement.classList.add('answered');
-                checkAllAnswered();
-            } else {
-                option.style.backgroundColor = "red";
-                setTimeout(() => {
-                    option.style.backgroundColor = "#003366";
-                }, 1000);
-            }
-        });
+// Añade un evento de clic a cada botón de respuesta
+options.forEach((option) => {
+  option.addEventListener("click", function () {
+    // Desmarca todas las opciones de la misma pregunta
+    const question = this.closest(".question");
+    question.querySelectorAll(".option").forEach((btn) => {
+      btn.classList.remove("selected");
     });
+
+    // Marca la opción seleccionada
+    this.classList.add("selected");
+  });
 });
 
-function checkAllAnswered() {
-    const allQuestions = document.querySelectorAll('.question');
-    const allAnswered = Array.from(allQuestions).every(question => 
-        question.classList.contains('answered')
-    );
+// Función para verificar las respuestas
+function checkAnswers() {
+  let score = 0;
+  let allCorrect = true;
 
-    if (allAnswered) {
-        document.getElementById('correct-image').style.visibility = 'visible';
+  // Itera sobre cada pregunta
+  document.querySelectorAll(".question").forEach((question) => {
+    const selectedOption = question.querySelector(".option.selected");
+
+    if (selectedOption) {
+      const isCorrect = selectedOption.getAttribute("data-correct") === "true";
+      if (isCorrect) {
+        selectedOption.classList.add("correct");
+        score++;
+      } else {
+        selectedOption.classList.add("incorrect");
+        allCorrect = false; // Si hay alguna respuesta incorrecta, no todas son correctas
+      }
     }
+
+    // Elimina la selección si la respuesta es incorrecta
+    question.querySelectorAll(".option").forEach((btn) => {
+      if (btn.getAttribute("data-correct") === "false" && btn.classList.contains("selected")) {
+        btn.classList.remove("selected");
+      }
+    });
+  });
+
+  // Muestra el resultado en un mensaje
+  alert(`Has acertado ${score} de ${document.querySelectorAll(".question").length} preguntas.`);
+
+  return allCorrect;
 }
 
+// Función para verificar y navegar a la siguiente página
 function navigateToNextPage() {
-    const container = document.querySelector('.container');
-    container.style.transition = 'transform 0.5s ease-in-out';
-    container.style.transform = 'translateX(-100vw)';
-    
-    setTimeout(() => {
-        window.location.href = 'src/main/resources/templates/practicaTipoDato.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
-    }, 500);
+  const allQuestionsAnswered = Array.from(document.querySelectorAll(".question")).every(
+    (question) => question.querySelector(".option.selected") !== null
+  );
+
+  if (allQuestionsAnswered) {
+    const allCorrect = checkAnswers(); // Verifica si todas las respuestas son correctas
+    if (allCorrect) {
+      // Redirige a la siguiente página si todas las respuestas son correctas
+      window.location.href =
+        "http://127.0.0.1:5500/src/main/resources/templates/2.1_PracticaTipoDato.html"; // Cambia 'nextPage.html' por la URL de tu siguiente página
+    } else {
+      alert("Hay respuestas incorrectas. Por favor, revisa tus respuestas antes de avanzar.");
+    }
+  } else {
+    alert("Debes completar todas las preguntas para avanzar.");
+  }
 }

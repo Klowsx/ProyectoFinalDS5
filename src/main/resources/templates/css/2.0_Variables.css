@@ -64,70 +64,89 @@ nav .navDer button {
   transform: translateY(4px);
 }
 .logo {
-    height: 100%;
-    width: fit-content;
+  height: 100%;
+  width: fit-content;
 }
 
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1100px;
-    width: 100%;
-    position: relative;
-    margin-top: 72px; /* espacio para el nav */
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
 }
 
 .content h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+p {
+  text-align: justify;
+  line-height: 1.6;
+  color: #555;
 }
 
 .content h2 {
-    font-size: 20px;
-    margin-top: 20px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .content ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .content ul li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 pre {
-    color: #0056b3;
-    background-color: #f7f7f7;
-    padding: 10px;
-    border-radius: 5px;
-    overflow: auto;
+  color: #0056b3;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+}
+iframe {
+  width: 700px;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Jugar {
+  margin-bottom: 5px;
 }
 
 .next-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
 }
 
 .next-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }

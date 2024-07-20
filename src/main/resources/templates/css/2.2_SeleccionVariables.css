@@ -65,119 +65,133 @@ nav .navDer button {
 }
 
 .logo {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
 .container {
-    width: 90%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 7%; /* Ensures container is below the fixed nav */
-    flex: 1;
-    margin-bottom: 5%;
-    overflow: hidden; /* Prevents overflow */
-    position: relative; /* Needed for positioning the next button */
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 7%; /* Ensures container is below the fixed nav */
+  flex: 1;
+  margin-bottom: 5%;
+
+  position: relative; /* Needed for positioning the next button */
 }
 
 .content-and-image {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px; /* Espacio entre el contenido y la imagen */
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Espacio entre el contenido y la imagen */
 }
 
 .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .quiz {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .question {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .answer-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 600px;
 }
 
 .option {
-    background-color: #003366;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    flex: 1 1 calc(50% - 20px);
-    text-align: center;
-}
-
-.option:active {
-    background-color: #0056b3;
+  background-color: #3e73a9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  flex: 1 1 calc(50% - 20px);
+  text-align: center;
 }
 
 .check-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    margin-top: 3%;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    align-self: center; /* Centering the button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 3%;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  align-self: center; /* Centering the button */
 }
 
 .check-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .image-container {
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    flex-shrink: 0;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex-shrink: 0;
 }
 
 .placeholder-image {
-    max-width: 40%;
-    height: auto;
-    visibility: hidden; /* Initially invisible */
+  max-width: 40%;
+  height: auto;
+  visibility: hidden; /* Initially invisible */
 }
 
 .next-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
 }
 
 .next-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+/* Clase para marcar la opción seleccionada */
+.option.selected {
+  background-color: #0c3e75; /* Color de fondo para la opción seleccionada */
+}
+
+/* Clase para marcar la opción correcta */
+.option.correct {
+  background-color: #1e8536; /* Color de fondo para respuestas correctas */
+  color: #f8d7da; /* Color del texto para respuestas correctas */
+}
+
+/* Clase para marcar la opción incorrecta */
+.option.incorrect {
+  background-color: #ba3333; /* Color de fondo para respuestas incorrectas */
+  color: #f8d7da; /* Color del texto para respuestas incorrectas */
 }

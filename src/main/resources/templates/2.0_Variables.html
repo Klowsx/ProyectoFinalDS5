@@ -39,16 +39,33 @@
             <p>En Java, se declara una variable especificando su tipo de datos seguido del nombre de la variable. La
                 inicialización se realiza asignando un valor a la variable.</p>
             <pre>
-int edad = 25;
-float temperatura = 36.6f;
-double salario = 75500.75;
-char inicial = 'J';
-boolean esEstudiante = true;
+                int edad = 25;
+                float temperatura = 36.6f;
+                double salario = 75500.75;
+                char inicial = 'J';
+                boolean esEstudiante = true;
             </pre>
+            <div class="video-container">
+                <h2>Video Explicativo</h2>
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                <h4 class="Jugar">Jugar</h4>
+                <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+            </div>
+
         </div>
-        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
     </div>
-    <script src="js/2.0_Variables.js"></script>
+    <script>
+        function navigateToNextPage() {
+            const container = document.querySelector('.container');
+            container.style.transition = 'transform 0.5s ease-in-out';
+            container.style.transform = 'translateX(-100vw)';
+
+            setTimeout(() => {
+                window.location.href = 'http://127.0.0.1:5500/src/main/resources/templates/2.2_SeleccionMultipleVariables.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
+            }, 500);
+        }
+
+    </script>
 </body>
 
 </html>

@@ -27,21 +27,73 @@
                 <h2>Selecciona la opción correcta que inicializa la variable adecuadamente.</h2>
                 <div class="quiz">
                     <div class="question" id="question1">
-                        <p>Usado para almacenar el nombre de una persona, que es "Ana".</p>
+                        <p>1. ¿Cuál de las siguientes declaraciones de variables es correcta?</p>
                         <div class="answer-options">
-                            <button class="option">a) char nombre = "Ana";</button>
-                            <button class="option">b) String nombre = 'Ana';</button>
-                            <button class="option">c) String nombre = "Ana";</button>
-                            <button class="option">d) int nombre = "Ana";</button>
+                            <button class="option" data-correct="false">a) int valor = 5.21;</button>
+                            <button class="option" data-correct="false">b) double valor = "4.25";</button>
+                            <button class="option" data-correct="true">c) float valor = 5.75;</button>
+                            <button class="option" data-correct="false">d) char valor = "A";</button>
                         </div>
                     </div>
                     <div class="question" id="question2">
-                        <p>Usado para almacenar si una persona es estudiante o no, que es verdadero.</p>
+                        <p>2. ¿Qué tipo de dato se usa para almacenar un número con varios decimales?</p>
                         <div class="answer-options">
-                            <button class="option">a) boolean esEstudiante = "true";</button>
-                            <button class="option">b) boolean esEstudiante = true</button>
-                            <button class="option">c) int esEstudiante = 1;</button>
-                            <button class="option">d) boolean esEstudiante = 1;</button>
+                            <button class="option" data-correct="false">a) char</button>
+                            <button class="option" data-correct="false">b) int</button>
+                            <button class="option" data-correct="true">c) double</button>
+                            <button class="option" data-correct="false">d) byte</button>
+                        </div>
+                    </div>
+                    <!-- Nueva Pregunta 4 -->
+                    <div class="question" id="question3">
+                        <p>3. ¿Cuál es el tipo de dato adecuado para almacenar solo una letra en Java?</p>
+                        <div class="answer-options">
+                            <button class="option" data-correct="false">a) String</button>
+                            <button class="option" data-correct="false">b) int</button>
+                            <button class="option" data-correct="true">c) char</button>
+                            <button class="option" data-correct="false">d) boolean</button>
+                        </div>
+                    </div>
+                    <!-- Nueva Pregunta 5 -->
+                    <div class="question" id="question4">
+                        <p>4. ¿Qué tipo de dato se utiliza para almacenar valores verdaderos o falsos en Java?</p>
+                        <div class="answer-options">
+                            <button class="option" data-correct="false">a) int</button>
+                            <button class="option" data-correct="true">b) boolean</button>
+                            <button class="option" data-correct="false">c) double</button>
+                            <button class="option" data-correct="false">d) String</button>
+                        </div>
+                    </div>
+                    <!-- Nueva Pregunta 6 -->
+                    <div class="question" id="question5">
+                        <p>5. ¿Cuál es el tipo de dato para almacenar una cadena de texto en Java?</p>
+                        <div class="answer-options">
+                            <button class="option" data-correct="true">a) String</button>
+                            <button class="option" data-correct="false">b) char</button>
+                            <button class="option" data-correct="false">c) int</button>
+                            <button class="option" data-correct="false">d) boolean</button>
+                        </div>
+                    </div>
+                    <!-- Nueva Pregunta 7 -->
+                    <div class="question" id="question6">
+                        <p>6. ¿Cuál de las siguientes opciones es una cadena de caracteres en Java?</p>
+                        <div class="answer-options">
+                            <button class="option" data-correct="false">a) 123</button>
+                            <button class="option" data-correct="false">b) true</button>
+                            <button class="option" data-correct="false">c) Hello, World!</button>
+                            <button class="option" data-correct="true">d) "Hello, World!"</button>
+                        </div>
+                    </div>
+                    <!-- Nueva Pregunta 9 -->
+                    <div class="question" id="question7">
+                        <p>7. ¿Qué tipo de dato es el adecuado para representar la altura de una persona con precisión
+                            en
+                            Java?</p>
+                        <div class="answer-options">
+                            <button class="option" data-correct="true">a) float</button>
+                            <button class="option" data-correct="false">b) int</button>
+                            <button class="option" data-correct="false">c) char</button>
+                            <button class="option" data-correct="false">d) boolean</button>
                         </div>
                     </div>
                 </div>
@@ -50,7 +102,11 @@
                 <img src="media/correcto.png" alt="Imagen" class="placeholder-image" id="correct-image">
             </div>
         </div>
+        <!-- Agrega el botón de verificar respuestas -->
+        <button class="check-btn" onclick="checkAnswers()">Verificar Respuestas</button>
+        <!-- Botón para navegar a la siguiente página -->
         <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+
     </div>
     <script src="js/2.2_SeleccionVariables.js"></script>
 </body>

@@ -25,24 +25,55 @@
         <div class="content-and-image">
             <div class="content">
                 <h2>Completa los Tipos de Datos</h2>
-                <p>Instrucciones:<br>1. Completa el tipo de dato correcto en Java para cada variable.</p>
+                <p>Instrucciones:<br>1. Completa el tipo de dato correcto en Java para cada variable o el valor
+                    asignado.</p>
                 <div class="quiz">
+                    <!-- Asignar el tipo de dato -->
                     <div class="question">
                         <input type="text" id="edad-type" class="answer-box" ondrop="drop(event)"
                             ondragover="allowDrop(event)"> edad = 25;
                     </div>
+                    <!-- Completar el valor asignado -->
                     <div class="question">
-                        String nombre = <input type="text" id="nombre-type" class="answer-box" ondrop="drop(event)"
-                            ondragover="allowDrop(event)">';
+                        String nombre = <input type="text" id="nombre-value" class="answer-box" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">
                     </div>
+                    <!-- Asignar el tipo de dato -->
                     <div class="question">
                         <input type="text" id="precio-type" class="answer-box" ondrop="drop(event)"
                             ondragover="allowDrop(event)"> precio = 99.99;
                     </div>
+                    <!-- Completar el valor asignado -->
+                    <div class="question">
+                        double altura = <input type="text" id="altura-value" class="answer-box" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">
+                    </div>
+                    <!-- Asignar el tipo de dato -->
+                    <div class="question">
+                        <input type="text" id="esEstudiante-type" class="answer-box" ondrop="drop(event)"
+                            ondragover="allowDrop(event)"> esEstudiante = true;
+                    </div>
+                    <!-- Completar el valor asignado -->
+                    <div class="question">
+                        char letra = <input type="text" id="letra-value" class="answer-box" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">
+                    </div>
+                    <!-- Asignar el tipo de dato -->
+                    <div class="question">
+                        <input type="text" id="mensaje-type" class="answer-box" ondrop="drop(event)"
+                            ondragover="allowDrop(event)"> mensaje = "Hola, mundo!";
+                    </div>
                     <div class="answer-options">
+                        <!-- Opciones para arrastrar y soltar -->
                         <div class="option" draggable="true" ondragstart="drag(event)" id="int">int</div>
                         <div class="option" draggable="true" ondragstart="drag(event)" id="string">"Ana"</div>
                         <div class="option" draggable="true" ondragstart="drag(event)" id="double">double</div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="boolean">boolean</div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="char">'B'</div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="altura-value-option">1.75
+                        </div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="tipoString">String
+                        </div>
                     </div>
                     <button onclick="checkAnswers()" class="check-btn">Verificar</button>
                     <p class="drag-instructions">Arrastra a la respuesta correcta</p>
