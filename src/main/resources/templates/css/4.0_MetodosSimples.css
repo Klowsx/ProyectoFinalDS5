@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+:root {
+  --principal: #272a57;
+  --fondo: #0d4b92a4;
+}
+
+body {
+  font-family: Montserrat;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--principal);
+  color: white;
+  width: 100%;
+}
+
+nav img {
+  width: 70px;
+}
+
+#moneda {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav .navDer button {
+  margin-right: 15px;
+}
+
+.btnNavAdmin {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+.btnNavAdmin:hover {
+  background-color: #3e8e41;
+}
+
+.btnNavAdmin:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+p {
+  text-align: justify;
+  line-height: 1.6;
+  color: #555;
+}
+.video-container {
+  margin-top: 20px;
+  text-align: center;
+}
+iframe {
+  width: 700px;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Jugar {
+  margin-bottom: 5px;
+}
+
+.next-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
+}
+
+.next-btn:hover {
+  background-color: #0056b3;
+}

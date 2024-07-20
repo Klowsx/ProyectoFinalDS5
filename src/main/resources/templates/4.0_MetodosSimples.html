@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/4.0_MetodosSimples.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navIzq">
+            <img src="media/logo.png" alt="">
+            <h3>Nombre usuario</h3>
+            <img src="media/moneditas.png" alt="" id="moneda">
+            <h4>300</h4>
+        </div>
+        <div class="navDer">
+            <a class="btnNavAdmin" href="#">Administrador</a>
+            <a class="btnNavAdmin" href="#">Ayuda</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Métodos Simples en Programación</h1>
+        <p>
+            En programación, un método es un bloque de código diseñado para realizar una tarea específica. Los métodos
+            permiten a los desarrolladores dividir un programa en partes más manejables y reutilizables. Un método
+            simple es
+            aquel que realiza una tarea clara y bien definida, facilitando así la comprensión y mantenimiento del
+            código. La
+            creación de métodos simples ayuda a mejorar la legibilidad del código, reducir la redundancia y hacer que el
+            proceso de depuración sea más eficiente.
+        </p>
+        <div class="video-container">
+            <h2>Video Explicativo</h2>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+        <h4 class="Jugar">Jugar</h4>
+        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+    </div>
+    <script>
+        function navigateToNextPage() {
+            const container = document.querySelector('.container');
+            container.style.transition = 'transform 0.5s ease-in-out';
+            container.style.transform = 'translateX(-100vw)';
+
+            setTimeout(() => {
+                window.location.href = 'http://127.0.0.1:5500/src/main/resources/templates/4.1_PracticaDefinicion.html';
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>
