@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --principal: #272a57;
+  --fondo: #ffffff;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--fondo);
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--principal);
+  color: white;
+  padding: 10px;
+}
+
+nav img {
+  width: 70px;
+}
+
+#moneda {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav .navDer a {
+  margin-right: 15px;
+}
+
+.navIzq h3, .navIzq h4 {
+  margin: 0 10px;
+}
+
+.btnNavAdmin {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+.btnNavAdmin:hover {
+  background-color: #3e8e41;
+}
+
+.btnNavAdmin:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 50px); /* Ajustar según la altura del nav */
+  padding: 20px;
+}
+
+/* Estilos para el fondo de las tarjetas */
+.cards-background {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  border-radius: 20px;
+  padding: 20px;
+  width: 70%;
+  max-width: 500px;
+  max-height: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para las tarjetas */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 100%;
+  padding: 20px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  margin: 0;
+}
+
+.nombre {
+  font-weight: bold;
+}
+
+.leccion {
+  color: gray;
+}
+
+/* Estilos para el botón de eliminar */
+.btnEliminar {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px; /* Ajusta el padding para el icono y el texto */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el icono y el texto */
+}
+
+.iconoEliminar {
+  width: 20px; /* Ajusta el tamaño del icono */
+  height: 20px;
+}
+
+.btnEliminar span {
+  margin: 0; /* Elimina margen adicional si lo hay */
+}
+
+.btnEliminar:hover {
+  background-color: #d32f2f;
+}
+
+/* Estilos para el botón de estadísticas */
+.estadisticas {
+  margin-top: 30px;
+}
+
+.estadisticas button {
+  padding: 15px 30px;
+  background-color: var(--principal);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 400px;
+}
+
+.estadisticas button:hover {
+  background-color: #1e214a;
+}
