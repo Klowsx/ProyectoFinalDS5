@@ -31,6 +31,11 @@ function drop(event) {
             dropZone.style.backgroundColor = "lightgreen";
             dropZone.classList.add('correct');
             droppedElement.classList.add('correct');
+            
+            // Check if all drop zones are correct
+            if (areAllDropZonesCorrect()) {
+                document.getElementById("successIcon").style.display = "block";
+            }
         } else {
             dropZone.style.backgroundColor = "#ffbfaa";
             setTimeout(() => {
@@ -40,6 +45,11 @@ function drop(event) {
             }, 1000);
         }
     }
+}
+
+function areAllDropZonesCorrect() {
+    const dropZones = document.querySelectorAll('.drop-zone');
+    return Array.from(dropZones).every(zone => zone.classList.contains('correct'));
 }
 
 function navigateToNextPage() {
