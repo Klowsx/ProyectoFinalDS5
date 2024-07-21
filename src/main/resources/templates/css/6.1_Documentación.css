@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --principal: #272a57;
+  --fondo: #0d4b92a4;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden; /* Oculta la barra deslizante horizontal */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--principal);
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+nav img {
+  width: 70px;
+}
+
+#moneda {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav .navDer a {
+  margin-right: 15px;
+}
+
+.btnNavAdmin {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+.btnNavAdmin:hover {
+  background-color: #3e8e41;
+}
+
+.btnNavAdmin:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+.logo {
+  height: 100%;
+  width: fit-content;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 60px); /* Ajusta la altura según el tamaño del nav */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--fondo);
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li span {
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  background-color: #fff;
+  color: var(--principal);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li span:hover {
+  background-color: #e0e0e0;
+}
+
+.sub-menu {
+  display: none;
+  margin-left: 20px;
+  margin-top: 10px; /* Añade margen superior para separación */
+}
+
+.sub-menu li {
+  background-color: #fff;
+  color: var(--principal);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.sub-menu li:hover {
+  background-color: #e0e0e0;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Título de Documentación en la barra lateral */
+.sidebar::before {
+  content: "Documentación";
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
