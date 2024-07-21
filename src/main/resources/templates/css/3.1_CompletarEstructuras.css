@@ -65,96 +65,129 @@ nav .navDer button {
 }
 
 .logo {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%; /* Ensures container is below the fixed nav */
-    flex: 1;
-    margin-bottom: 4%;
-    overflow: hidden; /* Prevents overflow */
-    position: relative; /* Needed for positioning the next button */
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 8%; /* Ensures container is below the fixed nav */
+  flex: 1;
+  margin-bottom: 4%;
+  position: relative; /* Needed for positioning the next button */
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  margin-top: 40px;
 }
 
 .code-container {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
 }
 
 .drop-zone {
-    background-color: #e0e0e0;
-    border: 1px dashed #ccc;
-    padding: 2px 5px;
-    display: inline-block;
-    min-width: 50px;
-    text-align: center;
+  background-color: #e0e0e0;
+  border: 1px dashed #ccc;
+  padding: 2px 5px;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+}
+.answer-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
 }
 
 .options {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .option {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .option:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .next-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
 }
 
 .next-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .success-icon {
-    position: absolute;
-    display: block;
-    top: 20px;
-    right: 20px;
-    width: 10%;
-    height: fit-content
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 10%;
+  height: fit-content;
+}
+
+.check-btn {
+  background-color: #1e4c7c;
+  color: white;
+  border: none;
+  margin-top: 3%;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  align-self: center; /* Centering the button */
+}
+
+.check-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Ya incluido en tu CSS */
+.temp-correct {
+  background-color: lightgreen !important;
+}
+
+.temp-incorrect {
+  background-color: #ffbfaa !important;
 }

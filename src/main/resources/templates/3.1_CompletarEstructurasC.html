@@ -22,30 +22,76 @@
         </div>
     </nav>
     <div class="container">
-        <div class="content">
-            <h2>Completa las estructuras condicionales</h2>
-            <p>Instrucciones:</p>
-            <p>1. Mueve las opciones al lugar correcto</p>
-            <div class="code-container">
-                <pre>
-int age = 18;
-if (<span class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">__</span>) {
-    System.out.println("Eres mayor de edad.");
-} else {
-    System.out.println("Eres menor de edad.");
-}
-                </pre>
+        <div class="content-and-image">
+            <div class="content">
+                <h2>Completa las estructuras condicionales</h2>
+                <p>Instrucciones:</p>
+                <p>1. Mueve las opciones al lugar correcto</p>
+
+                <!-- Pregunta 1: Condición de Edad -->
+                <h3>1. Condición de Edad</h3>
+                <div class="code-container">
+                    <p>int age = 20;</p>
+                    <p>if (<input type="text" id="age-condition" class="drop-zone" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">) {</p>
+                    <p>&nbsp;&nbsp;System.out.println("Adulto");</p>
+                    <p>} else {</p>
+                    <p>&nbsp;&nbsp;System.out.println("Menor de edad");</p>
+                    <p>}</p>
+                </div>
+                <div class="answer-options" id="options1">
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option1">age >= 18</div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option2">age < 18</div>
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option3">age == 18</div>
+                    </div>
+
+                    <!-- Pregunta 2: Resultado de una Prueba -->
+                    <h3>2. Resultado de una Prueba - Nota mínima: 60</h3>
+                    <div class="code-container">
+                        <p>int score = 75;</p>
+                        <p>if (<input type="text" id="score-condition" class="drop-zone" ondrop="drop(event)"
+                                ondragover="allowDrop(event)">) {</p>
+                        <p>&nbsp;&nbsp;System.out.println("¡Has pasado!");</p>
+                        <p>} else {</p>
+                        <p>&nbsp;&nbsp;System.out.println("No has pasado.");</p>
+                        <p>}</p>
+                    </div>
+                    <div class="answer-options" id="options2">
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="option4">score >= 60</div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="option5">score < 60</div>
+                                <div class="option" draggable="true" ondragstart="drag(event)" id="option6">score == 75
+                                </div>
+                        </div>
+
+                        <!-- Pregunta 3: Verificación de Lluvia -->
+                        <h3>3. Verificación de Lluvia</h3>
+                        <div class="code-container">
+                            <p>boolean isRaining = true;</p>
+                            <p>if (<input type="text" id="rain-condition" class="drop-zone" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">) {</p>
+                            <p>&nbsp;&nbsp;System.out.println("Lleva un paraguas.");</p>
+                            <p>} else {</p>
+                            <p>&nbsp;&nbsp;System.out.println("No necesitas paraguas.");</p>
+                            <p>}</p>
+                        </div>
+                        <div class="answer-options" id="options3">
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option7">isRaining</div>
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option8">!isRaining</div>
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option9">isRaining ==
+                                false</div>
+                        </div>
+
+                        <button onclick="checkAnswers()" class="check-btn">Verificar</button>
+                        <p id="feedback" class="feedback"></p>
+                    </div>
+                    <div class="image-container">
+                        <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon"
+                            style="display:none;">
+                    </div>
+                </div>
+                <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
             </div>
-            <div class="options" id="options">
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option1">age >= 18</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">age &lt; 18</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option3">age == 18</button>
-            </div>
-        </div>
-        <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
-        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
-    </div>
-    <script src="js/3.1_CompletarEstructuras.js"></script>
+            <script src="js/3.1_CompletarEstructuras.js"></script>
 </body>
 
 </html>

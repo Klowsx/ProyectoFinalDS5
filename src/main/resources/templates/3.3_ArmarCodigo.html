@@ -11,9 +11,9 @@
 <body>
     <nav>
         <div class="navIzq">
-            <img src="media/logo.png" alt="">
+            <img src="media/logo.png" alt="Logo">
             <h3>Nombre usuario</h3>
-            <img src="media/moneditas.png" alt="" id="moneda">
+            <img src="media/moneditas.png" alt="Moneda" id="moneda">
             <h4>300</h4>
         </div>
         <div class="navDer">
@@ -29,41 +29,36 @@
             <p>Estás en una cueva con dos caminos. Si eliges el camino de la izquierda, te encuentras con un dragón. Si
                 eliges el camino de la derecha, encuentras un tesoro. ¿Qué decides?</p>
             <div class="code-container">
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="String camino = "></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="&quot;Escoge tu camino&quot;;"></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="if (camino.equals("></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="&quot;izquierda&quot;)) {"></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="System.out.println("></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="&quot;Te encuentras con un dragón.&quot;);"></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="} else {"></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="System.out.println("></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"
-                    data-correct="&quot;Encuentras un tesoro.&quot;);"></div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="}"></div>
+                <!-- Drop zones -->
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option1"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option2"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option3"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option4"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option5"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option6"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option7"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option8"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option9"></div>
+                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" data-correct="option10"></div>
             </div>
             <div class="options" id="options">
+                <!-- Draggable options -->
                 <button class="option" draggable="true" ondragstart="drag(event)" id="option1">String camino = </button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">"Escoge tu
-                    camino";</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">&quot;Escoge tu
+                    camino&quot;;</button>
                 <button class="option" draggable="true" ondragstart="drag(event)" id="option3">if
-                    (camino.equals(</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option4">"izquierda")) {</button>
+                    (camino.equals(&quot;</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option4">&quot;izquierda&quot;))
+                    {</button>
                 <button class="option" draggable="true" ondragstart="drag(event)"
-                    id="option5">System.out.println(</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option6">"Te encuentras con un
-                    dragón.");</button>
+                    id="option5">System.out.println(&quot;</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option6">&quot;Te encuentras con
+                    un dragón.&quot;);</button>
                 <button class="option" draggable="true" ondragstart="drag(event)" id="option7">} else {</button>
                 <button class="option" draggable="true" ondragstart="drag(event)"
-                    id="option8">System.out.println(</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option9">"Encuentras un
-                    tesoro.");</button>
+                    id="option8">System.out.println(&quot;</button>
+                <button class="option" draggable="true" ondragstart="drag(event)" id="option9">&quot;Encuentras un
+                    tesoro.&quot;);</button>
                 <button class="option" draggable="true" ondragstart="drag(event)" id="option10">}</button>
             </div>
         </div>

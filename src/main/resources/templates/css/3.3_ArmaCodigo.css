@@ -65,137 +65,135 @@ nav .navDer button {
 }
 
 .logo {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 100px auto;
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-    box-sizing: border-box;
-    min-height: 400px;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 @media (max-width: 1024px) {
-    .container {
-        width: 95%;
-        margin-top: 100px;
-    }
+  .container {
+    width: 95%;
+    margin-top: 100px;
+  }
 }
 
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 15px;
-        min-height: 300px;
-    }
+  .container {
+    width: 100%;
+    padding: 15px;
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 10px;
-        margin-top: 80px;
-        min-height: 250px;
-    }
+  .container {
+    padding: 10px;
+    margin-top: 80px;
+    min-height: 250px;
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .code-container {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .drop-zone {
-    background-color: #e0e0e0;
-    border: 1px dashed #ccc;
-    padding: 20px;
-    box-sizing: border-box;
-    min-width: 150px;
-    text-align: center;
-    margin: 5px;
-    flex: 1 1 calc(33.333% - 10px);
-    height: 60px;
+  background-color: #e0e0e0;
+  border: 1px dashed #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 150px;
+  text-align: center;
+  margin: 5px;
+  flex: 1 1 calc(33.333% - 10px);
+  height: 60px;
 }
 
 .options {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .option {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-    border-radius: 20px;
-    box-sizing: border-box;
-    height: 60px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 60px;
 }
 
 .option.correct {
-    background-color: lightgreen;
-    cursor: default;
+  background-color: lightgreen;
+  cursor: default;
 }
 
 .option:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 .next-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
 }
 
 .next-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .success-icon {
-    position: absolute;
-    display: block;
-    top: 20px;
-    right: 5px;
-    width: 8%;
-    height: fit-content;
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 5px;
+  width: 8%;
+  height: fit-content;
 }

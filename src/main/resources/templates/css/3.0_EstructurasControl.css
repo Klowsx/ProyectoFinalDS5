@@ -65,64 +65,69 @@ nav .navDer button {
 }
 
 .logo {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%; /* Ensures container is below the fixed nav */
-    flex: 1;
-    margin-bottom: 4%;
-    overflow: hidden; /* Prevents overflow */
-    position: relative; /* Needed for positioning the next button */
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
 }
 
 .content-and-video {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px; /* Espacio entre el contenido y el video */
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Espacio entre el contenido y el video */
 }
 
 .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .video-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+}
+iframe {
+  width: 700px;
+  height: 400px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Jugar {
+  margin-bottom: 5px;
 }
 
 .next-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    transition: background-color 0.3s;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: background-color 0.3s;
 }
 
 .next-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }

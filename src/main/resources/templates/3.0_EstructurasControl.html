@@ -22,26 +22,36 @@
         </div>
     </nav>
     <div class="container">
-        <div class="content-and-video">
-            <div class="content">
-                <h2>3.0 Estructuras de Control</h2>
-                <p>En Java, las estructuras de control son esenciales para dirigir el flujo de ejecución de un programa.
-                    A continuación se presentan las principales estructuras de control en Java, junto con sus
-                    definiciones:</p>
-                <ol>
-                    <li>Estructuras de control condicionales</li>
-                    <li>Estructuras de control iterativas</li>
-                </ol>
-            </div>
-            <div class="video-container">
-                <!-- Aquí puedes insertar un iframe o video tag para el video -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tu_video_id" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
+        <div class="content">
+            <h2>3.0 Estructuras de Control</h2>
+            <p>En Java, las estructuras de control son esenciales para dirigir el flujo de ejecución de un programa.
+                A continuación se presentan las principales estructuras de control en Java, junto con sus
+                definiciones:</p>
+            <ol>
+                <li>Estructuras de control condicionales</li>
+                <li>Estructuras de control iterativas</li>
+            </ol>
         </div>
-        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+        <div class="video-container">
+            <h2>Video Explicativo</h2>
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+            <h4 class="Jugar">Jugar</h4>
+            <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+        </div>
+
     </div>
-    <script src="js/3.0_EstructurasControl.js"></script>
+    <script>
+        function navigateToNextPage() {
+            const container = document.querySelector('.container');
+            container.style.transition = 'transform 0.5s ease-in-out';
+            container.style.transform = 'translateX(-100vw)';
+
+            setTimeout(() => {
+                window.location.href = 'http://127.0.0.1:5500/src/main/resources/templates/3.1_CompletarEstructurasC.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
+            }, 500);
+        }
+
+    </script>
 </body>
 
 </html>

@@ -1,48 +1,111 @@
+let draggedElement = null;
+
+// Permite el arrastre
 function allowDrop(event) {
-    event.preventDefault();
+  event.preventDefault();
 }
 
+// Inicia el arrastre
 function drag(event) {
-    event.dataTransfer.setData("text", event.target.id);
+  draggedElement = event.target;
+  event.dataTransfer.setData("text", event.target.id);
 }
 
+// Maneja la caída del elemento
 function drop(event) {
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    var droppedElement = document.getElementById(data);
-    var dropZone = event.target;
-    var correctAnswer = "10";
+  event.preventDefault();
+  const dropZone = event.target;
 
-    dropZone.textContent = droppedElement.textContent;
+  // Si el dropZone ya tiene un valor, devuélvelo a las opciones
+  if (dropZone.getAttribute("data-value")) {
+    const originalOption = document.getElementById(dropZone.getAttribute("data-value"));
+    originalOption.style.display = "flex"; // Mostrar la opción de nuevo
+  }
 
-    // Check if the dropped answer is correct
-    if (droppedElement.textContent.trim() === correctAnswer) {
-        dropZone.style.backgroundColor = "lightgreen";
-        document.getElementById("successIcon").style.display = "block";
-        
-        // Hide all option buttons
-        var options = document.querySelectorAll(".option");
-        options.forEach(option => {
-            option.style.display = "none";
-        });
+  dropZone.value = draggedElement.textContent;
+  dropZone.setAttribute("data-value", event.dataTransfer.getData("text"));
+  draggedElement.style.display = "none"; // Ocultar la opción arrastrada
+
+  // Agregar un evento click para permitir reemplazar la opción
+  dropZone.addEventListener("click", () => {
+    const originalOption = document.getElementById(dropZone.getAttribute("data-value"));
+    originalOption.style.display = "flex"; // Mostrar la opción de nuevo
+    dropZone.value = ""; // Limpiar el drop zone
+    dropZone.removeAttribute("data-value");
+  });
+}
+
+// Verifica si las respuestas son correctas
+function checkAnswers() {
+  const correctAnswers = {
+    "for-loop-init": "option1",
+    "for-loop-condition": "option2",
+    "for-loop-update": "option3",
+    "while-loop-condition": "option4",
+    "do-while-loop-condition": "option6",
+  };
+
+  let allCorrect = true;
+
+  for (const [inputId, correctOptionId] of Object.entries(correctAnswers)) {
+    const inputElement = document.getElementById(inputId);
+
+    if (inputElement.getAttribute("data-value") === correctOptionId) {
+      inputElement.style.border = "2px solid green";
     } else {
-        dropZone.style.backgroundColor = "#ffbfaa";
-        setTimeout(() => {
-            dropZone.textContent = "__";
-            dropZone.style.backgroundColor = "";
-            droppedElement.style.display = "inline-block";
-        }, 1000);
+      inputElement.style.border = "2px solid red";
+      allCorrect = false;
+
+      // Devolver la opción incorrecta a su lugar original
+      const incorrectOption = document.getElementById(inputElement.getAttribute("data-value"));
+      if (incorrectOption) {
+        incorrectOption.style.display = "flex"; // Mostrar la opción incorrecta de nuevo
+      }
+      inputElement.value = ""; // Limpiar el drop zone
+      inputElement.removeAttribute("data-value");
     }
+  }
 
-    droppedElement.style.display = "none";
+  const feedback = document.getElementById("feedback");
+  feedback.style.display = "block";
+  feedback.textContent = allCorrect
+    ? "¡Todas las respuestas son correctas!"
+    : "Algunas respuestas son incorrectas, inténtalo de nuevo.";
+  feedback.style.color = allCorrect ? "green" : "red";
+
+  // Habilitar el botón "Siguiente" si todas las respuestas son correctas
+  const nextButton = document.getElementById("nextButton");
+  nextButton.disabled = !allCorrect;
 }
 
+// Maneja la navegación a la siguiente página
 function navigateToNextPage() {
-    const container = document.querySelector('.container');
-    container.style.transition = 'transform 0.5s ease-in-out';
-    container.style.transform = 'translateX(-100vw)';
-    
+  const correctAnswers = {
+    "for-loop-init": "option1",
+    "for-loop-condition": "option2",
+    "for-loop-update": "option3",
+    "while-loop-condition": "option4",
+    "do-while-loop-condition": "option6",
+  };
+
+  const allInputsCorrect = Object.keys(correctAnswers).every((inputId) => {
+    const inputElement = document.getElementById(inputId);
+    return inputElement.getAttribute("data-value") === correctAnswers[inputId];
+  });
+
+  if (allInputsCorrect) {
+    const container = document.querySelector(".container");
+    container.style.transition = "transform 0.5s ease-in-out";
+    container.style.transform = "translateX(-100vw)";
+
     setTimeout(() => {
-        window.location.href = 'src/main/resources/templates/nextpage.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
+      window.location.href =
+        "http://127.0.0.1:5500/src/main/resources/templates/3.3_ArmarCodigo.html"; // Cambia la URL a la siguiente página
     }, 500);
+  } else {
+    alert("No has respondido todas las preguntas correctamente, por favor vuelve a intentarlo");
+  }
 }
+
+// Asignar evento al botón de "Siguiente"
+document.getElementById("nextButton").addEventListener("click", navigateToNextPage);

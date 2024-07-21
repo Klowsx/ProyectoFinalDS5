@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estructuras de Bucle en Java</title>
-    <link rel="stylesheet" href="css/3.2_CompletarBucles.css">
+    <title>Estructuras de Control - Bucles</title>
+    <link rel="stylesheet" href="css/3.1_CompletarEstructuras.css">
 </head>
 
 <body>
@@ -22,29 +22,71 @@
         </div>
     </nav>
     <div class="container">
-        <div class="content">
-            <h2>Completa las estructuras de bucle</h2>
-            <p>Instrucciones:</p>
-            <p>1. Mueve las opciones al lugar correcto</p>
-            <div class="code-container">
-                <pre>
-int count = 0;
-while (count < <span class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">__</span>) {
-    System.out.println("Contador: " + count);
-    count++;
-}
-                </pre>
-            </div>
-            <div class="options" id="options">
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option1">10</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">count &lt; 10</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option3">5</button>
-            </div>
-        </div>
-        <img src="media/llaves2.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
-        <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
-    </div>
-    <script src="js/3.2_CompletarBucles.js"></script>
+        <div class="content-and-image">
+            <div class="content">
+                <h2>Completa las estructuras de bucles</h2>
+                <p>Instrucciones:</p>
+                <p>1. Mueve las opciones al lugar correcto</p>
+
+                <!-- Pregunta 1: Bucle for -->
+                <h3>1. Bucle for</h3>
+                <div class="code-container">
+                    <p>for (<input type="text" id="for-loop-init" class="drop-zone" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">; <input type="text" id="for-loop-condition" class="drop-zone"
+                            ondrop="drop(event)" ondragover="allowDrop(event)">; <input type="text" id="for-loop-update"
+                            class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">) {</p>
+                    <p>&nbsp;&nbsp;System.out.println("Iteración");</p>
+                    <p>}</p>
+                </div>
+                <div class="answer-options" id="options1">
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option1">int i = 0</div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option2">i < 10</div>
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option3">i++</div>
+                    </div>
+
+                    <!-- Pregunta 2: Bucle while -->
+                    <h3>2. Bucle while</h3>
+                    <div class="code-container">
+                        <p>int count = 0;</p>
+                        <p>while (<input type="text" id="while-loop-condition" class="drop-zone" ondrop="drop(event)"
+                                ondragover="allowDrop(event)">) {</p>
+                        <p>&nbsp;&nbsp;System.out.println("Iteración " + count);</p>
+                        <p>&nbsp;&nbsp;count++;</p>
+                        <p>}</p>
+                    </div>
+                    <div class="answer-options" id="options2">
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="option4">count < 5</div>
+                                <div class="option" draggable="true" ondragstart="drag(event)" id="option5">count >= 5
+                                </div>
+                        </div>
+
+                        <!-- Pregunta 3: Bucle do-while -->
+                        <h3>3. Bucle do-while</h3>
+                        <div class="code-container">
+                            <p>int n = 1;</p>
+                            <p>do {</p>
+                            <p>&nbsp;&nbsp;System.out.println("Número " + n);</p>
+                            <p>&nbsp;&nbsp;n++;</p>
+                            <p>} while (<input type="text" id="do-while-loop-condition" class="drop-zone"
+                                    ondrop="drop(event)" ondragover="allowDrop(event)">);</p>
+                        </div>
+                        <div class="answer-options" id="options3">
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option6">n <= 5</div>
+                                    <div class="option" draggable="true" ondragstart="drag(event)" id="option7">n > 5
+                                    </div>
+                            </div>
+
+                            <button onclick="checkAnswers()" class="check-btn">Verificar</button>
+                            <p id="feedback" class="feedback"></p>
+                        </div>
+                        <div class="image-container">
+                            <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon"
+                                style="display:none;">
+                        </div>
+                    </div>
+                    <button class="next-btn" id="nextButton" onclick="navigateToNextPage()">&#9654;</button>
+                </div>
+                <script src="js/3.2_CompletarBucles.js"></script>
 </body>
 
 </html>
