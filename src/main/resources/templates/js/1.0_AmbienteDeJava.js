@@ -34,6 +34,6 @@ function navigateToNextPage() {
 
   setTimeout(() => {
     window.location.href =
-      "http://127.0.0.1:5500/src/main/resources/templates/3.1_CompletarEstructurasC.html"; // Cambia 'nextpage.html' a la URL de la siguiente página
+      "http://127.0.0.1:5500/src/main/resources/templates/1.1_IntroducciónAlIde.html"; // Cambia 'nextpage.html' a la URL de la siguiente página
   }, 500);
 }

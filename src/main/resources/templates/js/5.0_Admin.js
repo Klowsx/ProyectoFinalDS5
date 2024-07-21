@@ -33,7 +33,6 @@ function navigateToNextPage() {
   container.style.transform = "translateX(-100vw)";
 
   setTimeout(() => {
-    window.location.href =
-      "http://127.0.0.1:5500/src/main/resources/templates/3.1_CompletarEstructurasC.html"; // Cambia 'nextpage.html' a la URL de la siguiente página
+    window.location.href = ""; // Cambia 'nextpage.html' a la URL de la siguiente página
   }, 500);
 }
