@@ -70,21 +70,6 @@ nav .navDer button {
 }
 
 .container {
-<<<<<<< Updated upstream
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  position: relative;
-  box-sizing: border-box;
-  height: 100%;
-=======
     width: 90%;
     max-width: 1200px;
     display: flex;
@@ -100,7 +85,6 @@ nav .navDer button {
     position: relative;
     box-sizing: border-box;
     min-height: 400px;
->>>>>>> Stashed changes
 }
 
 @media (max-width: 1024px) {
