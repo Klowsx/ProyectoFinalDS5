@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Completa la Definición de Métodos</title>
     <link rel="stylesheet" href="css/4.1_PracticaDefinicion.css">
 </head>
+
 <body>
     <nav>
-        <div class="navIzq">
-            <img src="media/logo.png" alt="">
-            <h3>Nombre usuario</h3>
-            <img src="media/moneditas.png" alt="" id="moneda">
-            <h4>300</h4>
-        </div>
-        <div class="navDer">
-            <a class="btnNavAdmin" href="#">Administrador</a>
-            <a class="btnNavAdmin" href="#">Ayuda</a>
-        </div>
+        <!-- Tu código de navegación aquí -->
     </nav>
     <div class="container">
         <div class="content">
             <h2>Completa la definición y estructura de métodos</h2>
             <p>Instrucciones:</p>
-            <p>Mueve las piezas al lugar correcto para completar el método</p>
-            <div class="code-container" id="codeContainer">
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
-                </div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
-                </div>
-                <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Mueve las piezas al lugar correcto para completar el método.</p>
 
-                    
+            <!-- Método 1 -->
+            <div class="method-section">
+                <h3>Método 1</h3>
+                <div class="code-container" id="codeContainer1">
+                    <div class="drop-zone" data-correct-id="option1" id="dropZone1-1" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                    <div class="drop-zone" data-correct-id="option2" id="dropZone1-2" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                    <div class="drop-zone" data-correct-id="option3" id="dropZone1-3" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="options" id="options1">
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option1">public void
+                        miMetodo() {</button>
+                    <button class="option" draggable="true" ondragstart="drag(event)"
+                        id="option2">System.out.println("Hola Mundo");</button>
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option3">}</button>
                 </div>
             </div>
-            <div class="options" id="options">
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option1">public void miMetodo() {</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option2">System.out.println("Hola Mundo");</button>
-                <button class="option" draggable="true" ondragstart="drag(event)" id="option3">}</button>
+
+            <!-- Método 2 -->
+            <div class="method-section">
+                <h3>Método 2</h3>
+                <div class="code-container" id="codeContainer2">
+                    <div class="drop-zone" data-correct-id="option4" id="dropZone2-1" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                    <div class="drop-zone" data-correct-id="option5" id="dropZone2-2" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                    <div class="drop-zone" data-correct-id="option6" id="dropZone2-3" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="options" id="options2">
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option4">public int suma(int
+                        a, int b) {</button>
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option5">return a +
+                        b;</button>
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option6">}</button>
+                </div>
             </div>
+
+            <!-- Método 3 -->
+            <div class="method-section">
+                <h3>Método 3</h3>
+                <div class="code-container" id="codeContainer3">
+                    <div class="drop-zone" data-correct-id="option7" id="dropZone3-1" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                    <div class="drop-zone" data-correct-id="option8" id="dropZone3-2" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                    <div class="drop-zone" data-correct-id="option9" id="dropZone3-3" ondrop="drop(event)"
+                        ondragover="allowDrop(event)"></div>
+                </div>
+                <div class="options" id="options3">
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option7">public String
+                        saludo(String nombre) {</button>
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option8">return "Hola, " +
+                        nombre;</button>
+                    <button class="option" draggable="true" ondragstart="drag(event)" id="option9">}</button>
+                </div>
+            </div>
+
         </div>
         <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
         <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
     </div>
     <script src="js/4.1_PracticaDefinicion.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Llamadas a Métodos</title>
+    <link rel="stylesheet" href="css/4.2_LlamadaMetodos.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navIzq">
+            <a href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html"><img
+                    src="media/logo.png" alt=""></a>
+            <h3 id="NombreUser">Nombre usuario</h3>
+            <img src="media/moneditas.png" alt="" id="moneda">
+            <h4 id="cantMonedas">300</h4>
+            <a class="btnNavAdmin" id="btnInicioNav"
+                href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html">Inicio</a>
+        </div>
+        <div class="navDer">
+            <a class="btnNavAdmin" id="btnAdmin"
+                href="http://127.0.0.1:5500/src/main/resources/templates/5.0_Admin.html">Administrador</a>
+            <a class="btnNavAdmin" href="http://127.0.0.1:5500/src/main/resources/templates/6.0_Ayuda.html">Ayuda</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content-and-image">
+            <div class="content">
+                <h2>Completa las llamadas a métodos</h2>
+                <p>Instrucciones:</p>
+                <p>1. Mueve las opciones al lugar correcto para completar la llamada al método.</p>
+
+                <!-- Problema 1: Llamada a método -->
+                <h3>1. Llamada a método</h3>
+                <div class="code-container">
+                    <p>public static void main(String[] args) {</p>
+                    <p>&nbsp;&nbsp;<input type="text" id="problem1-call" class="drop-zone" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">;</p>
+                    <p>}</p>
+                    <p>public static void saludarUsuario(String nombre) {</p>
+                    <p>&nbsp;&nbsp;System.out.println("Hola " + nombre);</p>
+                    <p>}</p>
+                </div>
+                <div class="answer-options" id="options1">
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option1">saludarUsuario("Ana")
+                    </div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option2">printSaludo("Ana")</div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option3">imprimirSaludo("Ana")
+                    </div>
+                </div>
+
+                <!-- Problema 2: Método con parámetros -->
+                <h3>2. Método con parámetros</h3>
+                <div class="code-container">
+                    <p>public static void main(String[] args) {</p>
+                    <p>String mensaje = "Hola mundo"</p>
+                    <p>&nbsp;&nbsp;imprimirMensaje(<input type="text" id="problem2-parameter" class="drop-zone"
+                            ondrop="drop(event)" ondragover="allowDrop(event)">);</p>
+                    <p>}</p>
+                    <p>public static void imprimirMensaje(String mensaje) {</p>
+                    <p>&nbsp;&nbsp;System.out.println(mensaje);</p>
+                    <p>}</p>
+                </div>
+                <div class="answer-options" id="options2">
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option5">"Mensaje"</div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option6">"Bienvenido"</div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option4">Mensaje</div>
+                </div>
+
+                <!-- Problema 3: Método sin parámetros -->
+                <h3>3. Método sin parámetros</h3>
+                <div class="code-container">
+                    <p>public static void main(String[] args) {</p>
+                    <p>&nbsp;&nbsp;<input type="text" id="problem3-call" class="drop-zone" ondrop="drop(event)"
+                            ondragover="allowDrop(event)">;</p>
+                    <p>}</p>
+                    <p>public static void imprimirMensajeDeBienvenida() {</p>
+                    <p>&nbsp;&nbsp;System.out.println("¡Bienvenido!");</p>
+                    <p>}</p>
+                </div>
+                <div class="answer-options" id="options3">
+
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option8">showWelcomeMessage()
+                    </div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option7">
+                        imprimirMensajeDeBienvenida()</div>
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option9">displayWelcomeMessage()
+                    </div>
+                </div>
+
+                <p id="feedback" class="feedback"></p>
+            </div>
+            <div class="image-container">
+                <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
+            </div>
+        </div>
+        <button class="next-btn" id="nextButton" onclick="navigateToNextPage()">&#9654;</button>
+    </div>
+    <script src="js/4.2_LlamadaMetodos.js"></script>
+</body>
+
+</html>

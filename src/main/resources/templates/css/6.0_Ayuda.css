@@ -117,3 +117,6 @@ h2 {
 .arrow.up {
   transform: rotate(180deg);
 }
+#btnInicioNav {
+  margin-left: 20px;
+}

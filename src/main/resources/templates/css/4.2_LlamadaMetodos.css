@@ -9,7 +9,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  height: 100vh;
   align-items: center;
 }
 
@@ -23,6 +22,10 @@ nav {
 
 nav img {
   width: 70px;
+}
+
+.navIzq {
+  display: flex;
 }
 
 #moneda {
@@ -71,7 +74,7 @@ nav .navDer button {
 
 .container {
   width: 90%;
-  max-width: 800px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -79,82 +82,57 @@ nav .navDer button {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 7%; /* Ensures container is below the fixed nav */
+  margin-top: 8%; /* Ensures container is below the fixed nav */
   flex: 1;
-  margin-bottom: 5%;
-
+  margin-bottom: 4%;
   position: relative; /* Needed for positioning the next button */
 }
 
-.content-and-image {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px; /* Espacio entre el contenido y la imagen */
-}
-
 .content {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.quiz {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.code-container {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
 }
 
-.question {
-  margin-bottom: 20px;
+.drop-zone {
+  background-color: #e0e0e0;
+  border: 1px dashed #ccc;
+  padding: 2px 5px;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
 }
-
 .answer-options {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.options {
+  display: flex;
   gap: 10px;
-  width: 600px;
+  margin-top: 10px;
 }
 
 .option {
-  background-color: #3e73a9;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  flex: 1 1 calc(50% - 20px);
-  text-align: center;
-}
-
-.check-btn {
   background-color: #007bff;
   color: white;
   border: none;
-  margin-top: 3%;
+  border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 5px;
   transition: background-color 0.3s;
-  align-self: center; /* Centering the button */
 }
 
-.check-btn:hover {
+.option:hover {
   background-color: #0056b3;
-}
-
-.image-container {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  flex-shrink: 0;
-}
-
-.placeholder-image {
-  max-width: 40%;
-  height: auto;
-  visibility: hidden; /* Initially invisible */
 }
 
 .next-btn {
@@ -179,22 +157,39 @@ nav .navDer button {
   background-color: #0056b3;
 }
 
-/* Clase para marcar la opción seleccionada */
-.option.selected {
-  background-color: #0c3e75; /* Color de fondo para la opción seleccionada */
+.success-icon {
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 10%;
+  height: fit-content;
 }
 
-/* Clase para marcar la opción correcta */
-.option.correct {
-  background-color: #1e8536; /* Color de fondo para respuestas correctas */
-  color: #f8d7da; /* Color del texto para respuestas correctas */
+.check-btn {
+  background-color: #1e4c7c;
+  color: white;
+  border: none;
+  margin-top: 3%;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  align-self: center;
 }
 
-/* Clase para marcar la opción incorrecta */
-.option.incorrect {
-  background-color: #ba3333; /* Color de fondo para respuestas incorrectas */
-  color: #f8d7da; /* Color del texto para respuestas incorrectas */
+.check-btn:hover {
+  background-color: #0056b3;
 }
+
+.temp-correct {
+  background-color: lightgreen !important;
+}
+
+.temp-incorrect {
+  background-color: #ffbfaa !important;
+}
+
 #btnInicioNav {
   margin-left: 20px;
 }

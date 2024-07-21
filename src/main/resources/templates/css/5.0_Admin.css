@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -41,10 +41,6 @@ nav div {
 
 nav .navDer a {
   margin-right: 15px;
-}
-
-.navIzq h3, .navIzq h4 {
-  margin: 0 10px;
 }
 
 .btnNavAdmin {
@@ -170,4 +166,7 @@ nav .navDer a {
 
 .estadisticas button:hover {
   background-color: #1e214a;
+}
+#btnInicioNav {
+  margin-left: 20px;
 }

@@ -11,14 +11,18 @@
 <body>
     <nav>
         <div class="navIzq">
-            <img src="media/logo.png" alt="">
-            <h3>Nombre usuario</h3>
+            <a href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html"><img
+                    src="media/logo.png" alt=""></a>
+            <h3 id="NombreUser">Nombre usuario</h3>
             <img src="media/moneditas.png" alt="" id="moneda">
-            <h4>300</h4>
+            <h4 id="cantMonedas">300</h4>
+            <a class="btnNavAdmin" id="btnInicioNav"
+                href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html">Inicio</a>
         </div>
         <div class="navDer">
-            <a class="btnNavAdmin" href="#">Administrador</a>
-            <a class="btnNavAdmin" href="#">Ayuda</a>
+            <a class="btnNavAdmin" id="btnAdmin"
+                href="http://127.0.0.1:5500/src/main/resources/templates/5.0_Admin.html">Administrador</a>
+            <a class="btnNavAdmin" href="http://127.0.0.1:5500/src/main/resources/templates/6.0_Ayuda.html">Ayuda</a>
         </div>
     </nav>
     <div class="container">
@@ -32,7 +36,7 @@
                 <h4 class="Jugar">Jugar</h4>
                 <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
             </div>
-    
+
 
         </div>
     </div>

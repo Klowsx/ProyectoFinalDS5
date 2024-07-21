@@ -12,7 +12,6 @@ body {
   margin: 0;
   height: 100vh;
   align-items: center;
-  overflow: scroll; /* Evita el desbordamiento global */
 }
 
 nav {
@@ -67,20 +66,20 @@ nav .navDer button {
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%; /* Asegura que el contenedor esté debajo de la navegación fija */
-    flex: 1;
-    margin-bottom: 4%;
-    overflow: scroll; /* Evita el desbordamiento */
-    position: relative; /* Necesario para posicionar el botón de siguiente */
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 8%; /* Asegura que el contenedor esté debajo de la navegación fija */
+  flex: 1;
+  margin-bottom: 4%;
+
+  position: relative; /* Necesario para posicionar el botón de siguiente */
 }
 
 .content {
@@ -169,4 +168,16 @@ nav .navDer button {
   right: 20px;
   width: 10%;
   height: auto; /* Cambiado para mantener las proporciones del icono */
+}
+.drop-zone.correct {
+  border-color: green;
+  background-color: #e0f9e0;
+}
+
+.drop-zone.incorrect {
+  border-color: red;
+  background-color: #f9e0e0;
+}
+#btnInicioNav {
+  margin-left: 20px;
 }
