@@ -142,3 +142,7 @@ nav .navDer button {
     transform: translateX(-50%);
   }
 }
+
+.completada {
+  background-color: #1fa73f; /* Un color verde claro para indicar completado */
+}

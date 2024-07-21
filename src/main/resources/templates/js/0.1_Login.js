@@ -45,20 +45,29 @@ function iniciarSesion() {
       console.log("Datos recibidos del servidor:", data);
 
       if (data) {
-        let codRol = data.codRol;
-
-        console.log(data);
-        // Se guarda el nombre y el apellido del usuario:
+        // Verificación de campos específicos en el objeto recibido
+        var codRol = data.codRol;
+        // Guardando en sessionStorage
         sessionStorage.setItem("idUsuario", data.idUsuario);
-        sessionStorage.setItem("Usuario", data.Usuario);
-        sessionStorage.setItem("Puntos", data.Puntos);
-        sessionStorage.setItem("LeccionMasAlta", data.LeccionMasAlta);
         sessionStorage.setItem("codRol", data.codRol);
+        sessionStorage.setItem("leccionMasAlta", data.leccionMasAlta);
+        sessionStorage.setItem("nombreLeccion", data.nombreLeccion);
+        sessionStorage.setItem("puntos", data.puntos);
+        sessionStorage.setItem("Usuario", data.usuario);
 
-        if (codRol === 1) {
+        // Verificación de almacenamiento
+        console.log("idUsuario: ", sessionStorage.getItem("idUsuario"));
+        console.log("codRol: ", sessionStorage.getItem("codRol"));
+        console.log("leccionMasAlta: ", sessionStorage.getItem("leccionMasAlta"));
+        console.log("nombreLeccion: ", sessionStorage.getItem("nombreLeccion"));
+        console.log("puntos: ", sessionStorage.getItem("puntos"));
+        console.log("Usuario: ", sessionStorage.getItem("Usuario"));
+        alert("aas");
+        // Redirección según el rol
+        if (codRol == 1) {
           // USUARIO
           window.location.href = "/src/main/resources/templates/0.0_InicioEdublocks.html";
-        } else if (codRol === 2) {
+        } else if (codRol == 2) {
           // ADMIN
           window.location.href = "/src/main/resources/templates/0.0_InicioEdublocks.html";
         } else {

@@ -85,6 +85,10 @@ function checkAnswers(isForNavigation = false) {
     } else {
       document.getElementById(id).style.backgroundColor = "lightcoral";
       allCorrect = false;
+
+      // Restaurar las opciones incorrectas
+      restoreToOptions(userAnswer);
+      document.getElementById(id).value = "";
     }
   }
 
@@ -102,3 +106,6 @@ function checkAnswers(isForNavigation = false) {
 
   return allCorrect;
 }
+
+// Asignar evento al botón de "Siguiente"
+document.getElementById("nextButton").addEventListener("click", navigateToNextPage);
