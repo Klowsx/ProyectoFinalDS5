@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de un proyecto</title>
+    <link rel="stylesheet" href="css/2.0_Variables.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navIzq">
+            <img src="media/logo.png" alt="">
+            <h3>Nombre usuario</h3>
+            <img src="media/moneditas.png" alt="" id="moneda">
+            <h4>300</h4>
+        </div>
+        <div class="navDer">
+            <a class="btnNavAdmin" href="#">Administrador</a>
+            <a class="btnNavAdmin" href="#">Ayuda</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1>Creación de un proyecto en Java</h1>
+            <p>A continuación te introduciremos a la creación de tu primer proyecto básico en Java</p>
+
+            <div class="video-container">
+                <h2>Video Explicativo</h2>
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                <h4 class="Jugar">Jugar</h4>
+                <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+            </div>
+    
+
+        </div>
+    </div>
+    <script>
+        function navigateToNextPage() {
+            const container = document.querySelector('.container');
+            container.style.transition = 'transform 0.5s ease-in-out';
+            container.style.transform = 'translateX(-100vw)';
+
+            setTimeout(() => {
+                window.location.href = 'http://127.0.0.1:5500/src/main/resources/templates/0.2_LeccionCompletada.html'; // Cambia 'nextpage.html' a la URL de la siguiente página
+            }, 500);
+        }
+
+    </script>
+</body>
+
+</html>
