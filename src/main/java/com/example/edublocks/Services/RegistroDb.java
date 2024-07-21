@@ -30,7 +30,7 @@ public class RegistroDb {
     }
 
     public Usuario obtenerUsuario(Usuario usuario) {
-        String query = "SELECT u.IdUsuario, u.Usuario, u.Correo, u.Contrasena, u.Puntos, u.LeccionMasAlta, l.NombreLeccion "
+        String query = "SELECT u.IdUsuario, u.Usuario, u.Correo, u.Contrasena, u.Puntos, u.LeccionMasAlta, l.NombreLeccion, u.codRol "
                 +
                 "FROM Users u " +
                 "INNER JOIN Lecciones l ON u.LeccionMasAlta = l.IdLeccion " +
@@ -50,6 +50,7 @@ public class RegistroDb {
                 usuarioEncontrado.setPuntos(result.getInt("Puntos"));
                 usuarioEncontrado.setLeccionMasAlta(result.getInt("LeccionMasAlta"));
                 usuarioEncontrado.setNombreLeccion(result.getString("NombreLeccion"));
+                usuarioEncontrado.setCodRol(result.getInt("codRol"));
                 return usuarioEncontrado;
             }
         } catch (SQLException e) {

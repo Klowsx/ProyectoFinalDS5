@@ -49,21 +49,18 @@ function iniciarSesion() {
 
         console.log(data);
         // Se guarda el nombre y el apellido del usuario:
-        sessionStorage.setItem("nombreUsuario", data.nombre);
-        sessionStorage.setItem("apellidoUsuario", data.apellido);
-        sessionStorage.setItem("codUsuario", data.codUsuario);
-        sessionStorage.setItem("correo", data.correo);
+        sessionStorage.setItem("idUsuario", data.idUsuario);
+        sessionStorage.setItem("Usuario", data.Usuario);
+        sessionStorage.setItem("Puntos", data.Puntos);
+        sessionStorage.setItem("LeccionMasAlta", data.LeccionMasAlta);
+        sessionStorage.setItem("codRol", data.codRol);
 
-        var usuarioAlmacenado = sessionStorage.getItem("nombreUsuario");
-        var apellidoAlmacenado = sessionStorage.getItem("apellidoUsuario");
-        console.log("Nombre del usuario almacenado:", usuarioAlmacenado, apellidoAlmacenado);
-        alert("ola");
         if (codRol === 1) {
           // USUARIO
-          window.location.href = "/src/main/resources/templates/Reportes.html";
+          window.location.href = "/src/main/resources/templates/0.0_InicioEdublocks.html";
         } else if (codRol === 2) {
           // ADMIN
-          window.location.href = "/src/main/resources/templates/Admin-reportes.html";
+          window.location.href = "/src/main/resources/templates/0.0_InicioEdublocks.html";
         } else {
           console.log("Error al iniciar sesión");
         }

@@ -8,9 +8,10 @@ public class Usuario {
     private int Puntos;
     private int LeccionMasAlta;
     private String NombreLeccion;
+    private int codRol;
 
     public Usuario(int idUsuario, String usuario, String correo, String contrasena, int puntos, int leccionMasAlta,
-            String nombreLeccion) {
+            String nombreLeccion, int codRol) {
         this.idUsuario = idUsuario;
         Usuario = usuario;
         Correo = correo;
@@ -18,6 +19,15 @@ public class Usuario {
         Puntos = puntos;
         LeccionMasAlta = leccionMasAlta;
         NombreLeccion = nombreLeccion;
+        this.codRol = codRol;
+    }
+
+    public int getCodRol() {
+        return codRol;
+    }
+
+    public void setCodRol(int codRol) {
+        this.codRol = codRol;
     }
 
     public Usuario() {
