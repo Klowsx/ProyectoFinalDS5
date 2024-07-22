@@ -76,7 +76,7 @@ nav .navDer a {
 }
 
 .sidebar {
-  width: 250px;
+  width: 300px;
   background-color: var(--fondo);
   padding: 15px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -144,3 +144,12 @@ nav .navDer a {
 #btnInicioNav {
   margin-left: 20px;
 }
+
+#infoDisplay {
+  width: 1300px; /* Limita la altura del área de información */
+  overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
+  padding: 10px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluye el padding en la altura total */
+}
+
+
