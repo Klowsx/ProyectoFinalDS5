@@ -134,3 +134,17 @@ iframe {
 #btnInicioNav {
   margin-left: 20px;
 }
+
+.contbtnJugar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(217, 220, 253, 0.822);
+  border-radius: 20px;
+}

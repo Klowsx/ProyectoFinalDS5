@@ -157,3 +157,9 @@ iframe {
 #btnInicioNav {
   margin-left: 20px;
 }
+
+.container {
+  background-color: rgba(217, 220, 253, 0.822);
+  border-radius: 20px;
+  margin-top: 20px;
+}

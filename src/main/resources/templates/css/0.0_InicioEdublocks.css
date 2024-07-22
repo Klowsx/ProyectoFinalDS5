@@ -117,6 +117,10 @@ nav .navDer button {
   text-decoration: none;
 }
 
+.timeline-content:hover {
+  background-color: rgba(128, 128, 128, 0.474);
+}
+
 @media screen and (min-width: 668px) {
   .timeline {
     display: grid;

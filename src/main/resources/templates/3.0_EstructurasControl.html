@@ -12,9 +12,9 @@
     <nav>
         <div class="navIzq">
             <a href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html"><img
-                    src="media/logo.png" alt=""></a>
+                    src="media/logo.png" alt="Logo"></a>
             <h3 id="NombreUser">Nombre usuario</h3>
-            <img src="media/moneditas.png" alt="" id="moneda">
+            <img src="media/moneditas.png" alt="Monedas" id="moneda">
             <h4 id="cantMonedas">300</h4>
             <a class="btnNavAdmin" id="btnInicioNav"
                 href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html">Inicio</a>
@@ -28,21 +28,74 @@
     <div class="container">
         <div class="content">
             <h2>3.0 Estructuras de Control</h2>
-            <p>En Java, las estructuras de control son esenciales para dirigir el flujo de ejecución de un programa.
-                A continuación se presentan las principales estructuras de control en Java, junto con sus
-                definiciones:</p>
+            <p>En Java, las estructuras de control son esenciales para dirigir el flujo de ejecución de un programa. A
+                continuación se presentan las principales estructuras de control en Java, junto con sus definiciones:
+            </p>
             <ol>
-                <li>Estructuras de control condicionales</li>
-                <li>Estructuras de control iterativas</li>
+                <li><b>Estructuras de control condicionales:</b> Permiten tomar decisiones dentro del programa mediante
+                    el uso de condiciones. Ejemplos incluyen <code>if</code>, <code>else if</code>, <code>else</code>, y
+                    <code>switch</code>.
+                </li>
+                <li><b>Estructuras de control iterativas:</b> Permiten repetir una secuencia de instrucciones múltiples
+                    veces. Ejemplos incluyen <code>for</code>, <code>while</code>, y <code>do-while</code>.</li>
             </ol>
         </div>
-        <div class="video-container">
-            <h2>Video Explicativo</h2>
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-            <h4 class="Jugar">Jugar</h4>
-            <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
-        </div>
+        <div class="explanation-container">
+            <h2>Explicación</h2>
+            <h3>Comparadores en Java</h3>
+            <p>Los comparadores se utilizan en las estructuras de control para comparar valores. A continuación se
+                presentan los más comunes:</p>
+            <ul>
+                <li><code>==</code>: Igual a</li>
+                <li><code>!=</code>: Distinto de</li>
+                <li><code>&gt;</code>: Mayor que</li>
+                <li><code>&gt;=</code>: Mayor o igual que</li>
+                <li><code>&lt;</code>: Menor que</li>
+                <li><code>&lt;=</code>: Menor o igual que</li>
+            </ul>
 
+            <h3>If</h3>
+            <p>La estructura <code>if</code> se usa para tomar decisiones en el código. Evalúa una condición y, si es
+                verdadera, ejecuta el bloque de código correspondiente.</p>
+            <pre><code>int edad = 18;
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad.");
+} else if (edad >= 13) {
+    System.out.println("Eres un adolescente.");
+} else {
+    System.out.println("Eres un niño.");
+}</code></pre>
+
+            <h3>While</h3>
+            <p>El bucle <code>while</code> repite un bloque de código mientras la condición especificada sea verdadera.
+            </p>
+            <pre><code>int contador = 0;
+while (contador < 5) {
+    System.out.println("Contador: " + contador);
+    contador++;
+}</code></pre>
+
+            <h3>Do-While</h3>
+            <p>El bucle <code>do-while</code> es similar al <code>while</code>, pero garantiza que el bloque de código
+                se ejecute al menos una vez, ya que la condición se evalúa después de la ejecución del bloque.</p>
+            <pre><code>int contador = 0;
+do {
+    System.out.println("Contador: " + contador);
+    contador++;
+} while (contador < 5);</code></pre>
+
+            <h3>For</h3>
+            <p>El bucle <code>for</code> se utiliza cuando se conoce de antemano el número de iteraciones. Se compone de
+                tres partes: inicialización, condición y actualización.</p>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    System.out.println("i: " + i);
+}</code></pre>
+            <div class="contbtnJugar">
+                <h4 class="Jugar">Jugar</h4>
+                <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+            </div>
+
+        </div>
     </div>
     <script>
         sessionStorage.setItem("NuevaLeccionMasAlta", 3);
