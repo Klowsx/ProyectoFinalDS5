@@ -37,7 +37,6 @@
                 <div><img id="ImgGancho" src="media/correcto.png" alt=""></div>
             </div>
 
-
             <!-- Método 1 -->
             <div class="method-section">
                 <h3>Método 1</h3>
@@ -50,7 +49,6 @@
                         ondragover="allowDrop(event)"></div>
                 </div>
                 <div class="options" id="options1">
-
                     <button class="option" draggable="true" ondragstart="drag(event)" id="option3">}</button>
                     <button class="option" draggable="true" ondragstart="drag(event)"
                         id="option2">System.out.println("Hola Mundo");</button>
@@ -75,7 +73,6 @@
                         b;</button>
                     <button class="option" draggable="true" ondragstart="drag(event)" id="option4">public int suma(int
                         a, int b) {</button>
-
                     <button class="option" draggable="true" ondragstart="drag(event)" id="option6">}</button>
                 </div>
             </div>
@@ -97,12 +94,13 @@
                         nombre;</button>
                     <button class="option" draggable="true" ondragstart="drag(event)" id="option7">public String
                         saludo(String nombre) {</button>
-
                 </div>
             </div>
 
         </div>
         <img src="media/llaves.png" alt="Correcto" class="success-icon" id="successIcon" style="display:none;">
+        <div id="warningMessage" style="display:none; color: red; text-align: center;">Hay respuestas incorrectas.
+            Corrígelas para continuar.</div>
         <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
     </div>
     <script src="js/4.1_PracticaDefinicion.js"></script>

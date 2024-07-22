@@ -59,49 +59,61 @@ function drop(event) {
       dropZone.classList.add("incorrect");
       setTimeout(() => {
         dropZone.classList.remove("incorrect");
-        restoreElement(draggedElement);
-      }, 1000); // Tiempo para mostrar el feedback antes de restaurar
+      }, 1000);
     }
-  }
-}
-
-function restoreElement(element) {
-  // Busca el contenedor de opciones al que debería regresar el elemento
-  const options = document.querySelector(`#options${element.dataset.method}`);
-  element.style.display = "inline-block";
-  options.appendChild(element);
-
-  // Limpia la zona de caída si el elemento estaba allí
-  const dropZones = document.querySelectorAll(".drop-zone");
-  dropZones.forEach((zone) => {
-    if (zone.getAttribute("data-id") === element.id) {
-      zone.classList.remove("correct");
-      zone.classList.remove("incorrect");
-      zone.innerHTML = ""; // Limpia el contenido
-      zone.removeAttribute("data-id"); // Elimina el ID incorrecto si lo tenía
-    }
-  });
-}
-
-function checkCompletion() {
-  var zones = document.querySelectorAll(".drop-zone");
-  var correctOrder = Array.from(zones).map((zone) => zone.getAttribute("data-correct-id"));
-
-  let isComplete = Array.from(zones)
-    .map((zone) => zone.getAttribute("data-id"))
-    .every((id, index) => id === correctOrder[index]);
-
-  if (isComplete) {
-    document.getElementById("successIcon").style.display = "block";
   }
 }
 
 function navigateToNextPage() {
-  const container = document.querySelector(".container");
-  container.style.transition = "transform 0.5s ease-in-out";
-  container.style.transform = "translateX(-100vw)";
+  var warningMessage = document.getElementById("warningMessage");
 
-  setTimeout(() => {
-    window.location.href = "src/main/resources/templates/nextpage.html"; // Cambia 'nextpage.html' a la URL de la siguiente página
-  }, 500);
+  if (verifyAndRestoreAnswers()) {
+    // Redirige a la siguiente página si todas las respuestas son correctas
+    window.location.href =
+      "http://127.0.0.1:5500/src/main/resources/templates/4.2_LlamadaMetodos.html";
+  } else {
+    // Muestra el mensaje de advertencia si hay respuestas incorrectas
+    warningMessage.style.display = "block";
+    setTimeout(() => {
+      warningMessage.style.display = "none";
+    }, 3000);
+  }
+}
+
+function restoreElement(element) {
+  var optionsContainer = document.getElementById(
+    element.id.startsWith("option1")
+      ? "options1"
+      : element.id.startsWith("option2")
+      ? "options2"
+      : "options3"
+  );
+  optionsContainer.appendChild(element);
+  element.style.display = "inline-block";
+}
+
+function verifyAndRestoreAnswers() {
+  var dropZones = document.querySelectorAll(".drop-zone");
+  var allCorrect = true;
+
+  dropZones.forEach(function (dropZone) {
+    var correctId = dropZone.getAttribute("data-correct-id");
+    var placedId = dropZone.getAttribute("data-id");
+
+    if (correctId !== placedId) {
+      allCorrect = false;
+      var placedElement = dropZone.querySelector(".option");
+
+      if (placedElement) {
+        restoreElement(placedElement);
+      }
+
+      dropZone.classList.remove("correct");
+      dropZone.classList.add("placeholder");
+      dropZone.removeAttribute("data-id");
+      dropZone.innerHTML = ""; // Limpia la zona de caída
+    }
+  });
+
+  return allCorrect;
 }

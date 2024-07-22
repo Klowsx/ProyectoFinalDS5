@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8080"
+let baseUrl = "http://localhost:8080";
 
 function cerrarMensajeError() {
   document.getElementById("mensajeErrorBarra").style.display = "none";
@@ -62,7 +62,7 @@ function iniciarSesion() {
         console.log("nombreLeccion: ", sessionStorage.getItem("nombreLeccion"));
         console.log("puntos: ", sessionStorage.getItem("puntos"));
         console.log("Usuario: ", sessionStorage.getItem("Usuario"));
-        alert("aas");
+
         // Redirección según el rol
         if (codRol == 1) {
           // USUARIO

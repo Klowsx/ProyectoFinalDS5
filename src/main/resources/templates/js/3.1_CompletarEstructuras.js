@@ -20,104 +20,103 @@ function mostrarDatosUsuario() {
   }
   if (codRol == 1) {
     console.log("El usuario es un usuario regular");
-    btnAdmin.style.display = "none";
+    document.getElementById("btnAdmin").style.display = "none";
   } else if (codRol == 2) {
     console.log("El usuario es administrador");
-    botonAdmin.style.display = "block";
+    document.getElementById("btnAdmin").style.display = "block";
   }
 }
 
 let draggedElement = null;
-let allCorrect = false; // Variable global para almacenar el estado de respuestas correctas
 
-// Permite el arrastre
 function allowDrop(event) {
   event.preventDefault();
 }
 
-// Inicia el arrastre
 function drag(event) {
   draggedElement = event.target;
   event.dataTransfer.setData("text", event.target.id);
+  draggedElement.setAttribute("data-original-container", draggedElement.parentElement.id);
 }
 
-// Maneja la caída del elemento
 function drop(event) {
   event.preventDefault();
   const dropZone = event.target;
 
-  // Si el dropZone ya tiene un valor, devuélvelo a las opciones
-  if (dropZone.getAttribute("data-value")) {
-    const originalOption = document.getElementById(dropZone.getAttribute("data-value"));
-    originalOption.style.display = "flex"; // Mostrar la opción de nuevo
+  if (dropZone.classList.contains("drop-zone")) {
+    // Si el dropZone ya tiene un valor, devuélvelo a las opciones
+    if (dropZone.getAttribute("data-value")) {
+      const originalOption = document.getElementById(dropZone.getAttribute("data-value"));
+      originalOption.style.display = "block"; // Mostrar la opción de nuevo
+    }
+
+    dropZone.value = draggedElement.textContent;
+    dropZone.setAttribute("data-value", event.dataTransfer.getData("text"));
+    draggedElement.style.display = "none"; // Ocultar la opción arrastrada
+
+    // Agregar un evento click para permitir reemplazar la opción
+    dropZone.addEventListener("click", () => {
+      const originalOption = document.getElementById(dropZone.getAttribute("data-value"));
+      originalOption.style.display = "block"; // Mostrar la opción de nuevo
+      dropZone.value = ""; // Limpiar el drop zone
+      dropZone.removeAttribute("data-value");
+    });
   }
-
-  dropZone.value = draggedElement.textContent;
-  dropZone.setAttribute("data-value", event.dataTransfer.getData("text"));
-  draggedElement.style.display = "none"; // Ocultar la opción arrastrada
-
-  // Agregar un evento click para permitir reemplazar la opción
-  dropZone.addEventListener("click", () => {
-    const originalOption = document.getElementById(dropZone.getAttribute("data-value"));
-    originalOption.style.display = "flex"; // Mostrar la opción de nuevo
-    dropZone.value = ""; // Limpiar el drop zone
-    dropZone.removeAttribute("data-value");
-  });
 }
 
-// Verifica si las respuestas son correctas
+function restoreElement(element) {
+  var originalContainerId = element.getAttribute("data-original-container");
+  var optionsContainer = document.getElementById(originalContainerId);
+  optionsContainer.appendChild(element);
+  element.style.display = "inline-block";
+}
+
 function checkAnswers() {
   const correctAnswers = {
-    "for-loop-init": "option1",
-    "for-loop-condition": "option2",
-    "for-loop-update": "option3",
-    "while-loop-condition": "option4",
-    "do-while-loop-condition": "option6",
+    "age-condition": "option1",
+    "score-condition": "option4",
+    "rain-condition": "option7",
   };
 
-  allCorrect = true; // Inicialmente asumimos que todas las respuestas son correctas
+  let allCorrect = true;
 
   for (const [inputId, correctOptionId] of Object.entries(correctAnswers)) {
     const inputElement = document.getElementById(inputId);
+    const selectedOptionId = inputElement.getAttribute("data-value");
 
-    if (inputElement.getAttribute("data-value") === correctOptionId) {
-      inputElement.style.border = "2px solid green";
+    if (selectedOptionId === correctOptionId) {
+      inputElement.classList.add("correct");
+      inputElement.classList.remove("incorrect");
     } else {
-      inputElement.style.border = "2px solid red";
-      allCorrect = false;
-
-      // Devolver la opción incorrecta a su lugar original
-      const incorrectOption = document.getElementById(inputElement.getAttribute("data-value"));
-      if (incorrectOption) {
-        incorrectOption.style.display = "flex"; // Mostrar la opción incorrecta de nuevo
+      inputElement.classList.add("incorrect");
+      inputElement.classList.remove("correct");
+      if (selectedOptionId) {
+        restoreElement(document.getElementById(selectedOptionId));
       }
-      inputElement.value = ""; // Limpiar el drop zone
-      inputElement.removeAttribute("data-value");
+      inputElement.value = ""; // Limpiar el valor del input
+      inputElement.removeAttribute("data-value"); // Eliminar el atributo data-value
+      allCorrect = false;
     }
   }
 
-  const feedback = document.getElementById("feedback");
-  feedback.style.display = "block";
-  feedback.textContent = allCorrect
-    ? "¡Todas las respuestas son correctas!"
-    : "Algunas respuestas son incorrectas, inténtalo de nuevo.";
-  feedback.style.color = allCorrect ? "green" : "red";
+  if (allCorrect) {
+    document.getElementById("feedback").textContent = "¡Correcto!";
+    document.getElementById("successIcon").style.display = "block";
+    document.getElementById("nextButton").disabled = false;
+    document.getElementById("warningMessage").style.display = "none";
+  } else {
+    document.getElementById("feedback").textContent =
+      "Algunas respuestas son incorrectas. Inténtalo de nuevo.";
+    document.getElementById("nextButton").disabled = true;
+    document.getElementById("warningMessage").style.display = "block";
+  }
 }
 
-// Maneja la navegación a la siguiente página
-function navigateToNextPage() {
-  const container = document.querySelector(".container");
-  container.style.transition = "transform 0.5s ease-in-out";
-  container.style.transform = "translateX(-100vw)";
-
-  setTimeout(() => {
+document.getElementById("nextButton").addEventListener("click", function () {
+  if (document.getElementById("nextButton").disabled) {
+    document.getElementById("warningMessage").style.display = "block";
+  } else {
     window.location.href =
-      "http://127.0.0.1:5500/src/main/resources/templates/3.3_ArmarCodigo.html"; // Cambia a la URL de la siguiente página
-  }, 500);
-}
-
-// Asignar evento al botón de "Siguiente"
-document.getElementById("nextButton").addEventListener("click", () => {
-  checkAnswers(); // Verificar respuestas antes de navegar
-  navigateToNextPage(); // Navegar a la siguiente página
+      "http://127.0.0.1:5500/src/main/resources/templates/3.2_CompletarBucles.html";
+  }
 });

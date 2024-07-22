@@ -38,7 +38,6 @@
                     <div> <img src="media/iconoControl.png" alt="" srcset=""></div>
                 </div>
 
-
                 <!-- Pregunta 1: Condición de Edad -->
                 <h3>1. Condición de Edad</h3>
                 <div class="code-container">
@@ -51,7 +50,6 @@
                     <p>}</p>
                 </div>
                 <div class="answer-options" id="options1">
-
                     <div class="option" draggable="true" ondragstart="drag(event)" id="option2">age < 18</div>
                             <div class="option" draggable="true" ondragstart="drag(event)" id="option3">age == 18</div>
                             <div class="option" draggable="true" ondragstart="drag(event)" id="option1">age >= 18</div>
@@ -69,11 +67,9 @@
                         <p>}</p>
                     </div>
                     <div class="answer-options" id="options2">
-                        <div class="option" draggable="true" ondragstart="drag(event)" id="option6">score == 75
-                        </div>
+                        <div class="option" draggable="true" ondragstart="drag(event)" id="option6">score == 75</div>
                         <div class="option" draggable="true" ondragstart="drag(event)" id="option4">score >= 60</div>
                         <div class="option" draggable="true" ondragstart="drag(event)" id="option5">score < 60</div>
-
                         </div>
 
                         <!-- Pregunta 3: Verificación de Lluvia -->
@@ -102,7 +98,10 @@
                             style="display:none;">
                     </div>
                 </div>
-                <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
+                <button class="next-btn" id="nextButton">&#9654;</button>
+                <p id="warningMessage" class="warning-message" style="display:none;">Por favor, completa todas las
+                    respuestas
+                    correctamente antes de continuar.</p>
             </div>
             <script src="js/3.1_CompletarEstructuras.js"></script>
 </body>
