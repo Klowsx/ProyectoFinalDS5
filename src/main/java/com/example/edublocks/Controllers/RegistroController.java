@@ -29,4 +29,9 @@ public class RegistroController {
         }
     }
 
+    @PutMapping("/puntos")
+    public boolean RegistrarPuntos(@RequestBody Usuario usuario) {
+        RegistroDb registroDb = new RegistroDb();
+        return registroDb.registrarPuntosUsuario(usuario);
+    }
 }
