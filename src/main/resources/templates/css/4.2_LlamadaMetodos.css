@@ -157,15 +157,6 @@ nav .navDer button {
   background-color: #0056b3;
 }
 
-.success-icon {
-  position: absolute;
-  display: block;
-  top: 20px;
-  right: 20px;
-  width: 10%;
-  height: fit-content;
-}
-
 .check-btn {
   background-color: #1e4c7c;
   color: white;
@@ -192,4 +183,15 @@ nav .navDer button {
 
 #btnInicioNav {
   margin-left: 20px;
+}
+
+.contTextoImg {
+  display: flex;
+  justify-content: space-between;
+}
+
+#successIcon {
+  margin-top: 40px;
+  margin-right: 40px;
+  width: 80px;
 }

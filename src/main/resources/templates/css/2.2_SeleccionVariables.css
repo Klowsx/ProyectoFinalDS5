@@ -102,7 +102,6 @@ nav .navDer button {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .question {
@@ -145,16 +144,12 @@ nav .navDer button {
 }
 
 .image-container {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  flex-shrink: 0;
+  margin: 30px 30px 0px;
 }
 
 .placeholder-image {
   max-width: 40%;
   height: auto;
-  visibility: hidden; /* Initially invisible */
 }
 
 .next-btn {
@@ -197,4 +192,8 @@ nav .navDer button {
 }
 #btnInicioNav {
   margin-left: 20px;
+}
+
+.contTextoImg {
+  display: flex;
 }

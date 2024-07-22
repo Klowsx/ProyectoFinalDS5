@@ -194,3 +194,8 @@ h3 {
 #btnInicioNav {
   margin-left: 20px;
 }
+
+.contTextoImg {
+  display: flex;
+  justify-content: space-between;
+}

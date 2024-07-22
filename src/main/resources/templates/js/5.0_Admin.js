@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   mostrarDatosUsuario();
+  cargarUsuarios();
 });
 
 function mostrarDatosUsuario() {
@@ -18,21 +19,77 @@ function mostrarDatosUsuario() {
   } else {
     console.log("No se ha almacenado el nombre del usuario");
   }
+
+  const btnAdmin = document.getElementById("btnAdmin");
   if (codRol == 1) {
     console.log("El usuario es un usuario regular");
     btnAdmin.style.display = "none";
   } else if (codRol == 2) {
     console.log("El usuario es administrador");
-    botonAdmin.style.display = "block";
+    btnAdmin.style.display = "block";
   }
 }
 
-function navigateToNextPage() {
-  const container = document.querySelector(".container");
-  container.style.transition = "transform 0.5s ease-in-out";
-  container.style.transform = "translateX(-100vw)";
+function cargarUsuarios() {
+  fetch("http://localhost:8080/usuarios/all")
+    .then((response) => response.json())
+    .then((usuarios) => {
+      const container = document.getElementById("usuarios-container");
+      const noUsuarios = document.getElementById("no-usuarios");
 
-  setTimeout(() => {
-    window.location.href = ""; // Cambia 'nextpage.html' a la URL de la siguiente página
-  }, 500);
+      container.innerHTML = ""; // Limpiar contenedor
+      noUsuarios.style.display = "none"; // Ocultar mensaje de no usuarios
+
+      if (usuarios.length === 0) {
+        noUsuarios.style.display = "block"; // Mostrar mensaje si no hay usuarios
+        return;
+      }
+
+      usuarios.forEach((usuario) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-info">
+            <p class="nombre">${usuario.Usuario}</p>
+            <p class="leccion">Lección actual: ${usuario.NombreLeccion}</p>
+          </div>
+          <button class="btnEliminar" data-id="${usuario.idUsuario}">
+            <img src="media/delete.png" alt="Eliminar Icono" class="iconoEliminar">
+            <span>Eliminar</span>
+          </button>
+        `;
+        container.appendChild(card);
+      });
+
+      // Añadir manejadores de eventos para los botones de eliminar
+      document.querySelectorAll(".btnEliminar").forEach((button) => {
+        button.addEventListener("click", function () {
+          const idUsuario = this.getAttribute("data-id");
+          eliminarUsuario(idUsuario);
+        });
+      });
+    })
+    .catch((error) => {
+      console.error("Error al cargar los usuarios:", error);
+      const noUsuarios = document.getElementById("no-usuarios");
+      noUsuarios.textContent = "Error al cargar usuarios.";
+      noUsuarios.style.display = "block";
+    });
+}
+
+function eliminarUsuario(idUsuario) {
+  fetch(`http://localhost:8080/usuarios/${idUsuario}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Usuario eliminado con éxito");
+        cargarUsuarios(); // Recargar la lista de usuarios después de eliminar
+      } else {
+        return response.text().then((text) => {
+          alert(`Error al eliminar el usuario: ${text}`);
+        });
+      }
+    })
+    .catch((error) => console.error("Error al eliminar el usuario:", error));
 }
