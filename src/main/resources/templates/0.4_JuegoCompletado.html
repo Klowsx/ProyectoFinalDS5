@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección Completada</title>
+    <link rel="stylesheet" href="css/0.2_LeccionCompletada.css">
+</head>
+
+<body onload="añadirPuntos()">
+    <div class="container">
+        <div class="message">
+            <h2>¡Juego completado!</h2>
+            <h3>Haz terminado todas las lecciones</h3>
+        </div>
+        <div class="video-container">
+            <img src="media/JuegoCompletado.gif" alt="Lección Completada" class="gifkillerbeans" id="JuegoCompletado">
+        </div>
+        <a href="http://127.0.0.1:5500/src/main/resources/templates/0.0_InicioEdublocks.html">Aceptar</a>
+    </div>
+    <img src="media/si.png" alt="Cannon" class="confetti-cannon left-cannon">
+    <img src="media/si.png" alt="Cannon" class="confetti-cannon right-cannon">
+
+    <script>
+        sessionStorage.setItem("NuevaLeccionMasAlta", 5);
+    </script>
+    <script src="js/0.2_LeccionCompletada.js"></script>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

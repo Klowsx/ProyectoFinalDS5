@@ -32,7 +32,7 @@ body {
 }
 
 .gifkillerbeans {
-  width: 500px;
+  width: 400px;
   height: auto;
 }
 
@@ -120,4 +120,8 @@ a:active {
 h4 {
   margin-top: 0;
   color: rgb(255, 223, 17);
+}
+
+#JuegoCompletado {
+  width: 700px;
 }

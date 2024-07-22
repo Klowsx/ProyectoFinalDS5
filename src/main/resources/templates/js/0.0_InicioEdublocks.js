@@ -59,6 +59,12 @@ function actualizarPuntosUsuario() {
         var puntos = data; // Suponiendo que el servidor devuelve un número entero
         sessionStorage.setItem("puntos", puntos); // Actualiza el sessionStorage
         document.getElementById("cantMonedas").textContent = puntos; // Actualiza el contenido en la página
+
+        // Verificar si el usuario tiene 400 puntos y redirigir si es así
+        if (puntos == 400) {
+          window.location.href =
+            "http://127.0.0.1:5500/src/main/resources/templates/0.4_JuegoCompletado.html";
+        }
       })
       .catch((error) => console.error("Error al obtener puntos:", error));
   }

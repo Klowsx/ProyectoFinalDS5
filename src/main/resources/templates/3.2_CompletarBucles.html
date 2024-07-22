@@ -50,9 +50,10 @@
                     <p>}</p>
                 </div>
                 <div class="answer-options" id="options1">
+                    <div class="option" draggable="true" ondragstart="drag(event)" id="option3">i++</div>
                     <div class="option" draggable="true" ondragstart="drag(event)" id="option1">int i = 0</div>
                     <div class="option" draggable="true" ondragstart="drag(event)" id="option2">i < 10</div>
-                            <div class="option" draggable="true" ondragstart="drag(event)" id="option3">i++</div>
+
                     </div>
 
                     <!-- Pregunta 2: Bucle while -->
@@ -82,9 +83,10 @@
                                     ondrop="drop(event)" ondragover="allowDrop(event)">);</p>
                         </div>
                         <div class="answer-options" id="options3">
+                            <div class="option" draggable="true" ondragstart="drag(event)" id="option7">n > 5
+                            </div>
                             <div class="option" draggable="true" ondragstart="drag(event)" id="option6">n <= 5</div>
-                                    <div class="option" draggable="true" ondragstart="drag(event)" id="option7">n > 5
-                                    </div>
+
                             </div>
 
                             <button onclick="checkAnswers()" class="check-btn">Verificar</button>
