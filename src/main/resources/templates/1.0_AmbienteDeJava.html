@@ -35,18 +35,37 @@
             <p>JAVA_HOME y PATH son variables de entorno que se utilizan para configurar y gestionar el entorno de
                 desarrollo Java en un sistema operativo. Aquí hay una descripción detallada de cada una y su
                 importancia:</p>
-            <li><strong>JAVA_HOME:</strong> es una variable de entorno que apunta al directorio donde está instalado el
-                Java Development Kit (JDK). Esta variable es esencial para muchas herramientas y aplicaciones Java, ya
-                que les indica dónde encontrar las bibliotecas y ejecutables de Java.</li>
-            <li><strong>PATH:</strong> Es una variable de entorno que contiene una lista de directorios que el sistema
-                operativo busca para encontrar ejecutables. Al añadir el directorio bin del JDK al PATH, puedes ejecutar
-                comandos de Java (como java y javac) desde cualquier lugar del sistema sin tener que especificar su ruta
-                completa.</li>
             <h2>Instalar Java y configurar variables de entorno JAVA HOME y PATH</h2>
+            <p>PASO 1: CONFIGURAR LA VARIABLE JAVA_HOME
+
+                JAVA_HOME, es una variable de entorno del sistema que informa al sistema operativo sobre la ruta donde se encuentra instalado Java. Seguiremos la siguiente secuencia de pasos para configurar esta variable:
+                
+                Abrimos el explorador de Windows o pulsamos sobre “Mi Pc”. Pulsamos sobre Equipo y con botón derecho del ratón o buscando el icono -> Propiedades -> Configuración avanzada / Cambiar configuración -> Opciones avanzadas -> Variables de entorno -> Nueva (Variables del sistema).
+                
+                En otras versiones tenemos que llegar a Configuración avanzada del sistema /  Variables de entorno... -> Nueva (Variables del sistema).</p>
             </pre>
-            <div class="video-container">
-                <h2>Video Explicativo</h2>
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+            <div class="image-container">
+                <img src="media/entorno1.png" alt="Descripción de la imagen">
+            </div>
+            <p>Nombre de variable: JAVA_HOME
+                Valor de variable: escribiremos aquí la ruta en que se haya instalado Java. Puedes consultarla en el propio explorador de Windows buscando la carpeta en que se ha instalado Java, que normalmente será del tipo C:\Program Files\Java\jdk1.8.0_72 ó C:\Program Files (x86)\Java\jdk1.8.0_72 o similar. Fíjate en la barra superior donde aparece la ruta y cópiala tal y como aparece ahí.</p>
+                <div class="image-container">
+                    <img src="media/entorno2.png" alt="Descripción de la imagen">
+                </div>
+                <div class="image-container">
+                    <img src="media/entorno.3.png" alt="Descripción de la imagen">
+                </div>
+                <p>PASO 2: CONFIGURAR LA VARIABLE PATH
+
+                    PATH es una variable de entorno del sistema que informa al sistema operativo sobre la ruta de distintos directorios esenciales para el funcionamiento del ordenador. Vamos a añadir al contenido de la variable PATH el lugar donde se encuentran los ficheros ejecutables de Java necesarios para su ejecución, como el compilador (javac.exe) y el intérprete (java.exe). Seguiremos la siguiente secuencia de pasos para configurar esta variable.
+                    
+                    Abrimos el explorador de Windows o pulsamos sobre “Mi Pc”. Pulsamos sobre Equipo -> Propiedades y con botón derecho del ratón o buscando el icono -> Configuración avanzada / Cambiar configuración -> Opciones avanzadas -> Variables de entorno -> buscamos en Variables del sistema la variable Path, pulsamos para seleccionarla y hacemos click en el botón Editar. Luego al final del contenido que ya exista, añadiremos un punto y coma y el texto %JAVA_HOME%\bin. No deben quedar espacios intermedios.
+                    
+                    En otras versiones tenemos que llegar a Configuración avanzada del sistema /  Variables de entorno... -> buscamos en Variables del sistema la variable Path, pulsamos para seleccionarla y hacemos click en el botón Editar.</p>
+                    <div class="image-container">
+                        <img src="media/entorno4.png" alt="Descripción de la imagen">
+                    </div>
+                    <div class="video-container">
                 <h4 class="Jugar">Siguiente</h4>
                 <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
             </div>
