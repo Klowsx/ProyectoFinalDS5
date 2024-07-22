@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de un proyecto</title>
     <link rel="stylesheet" href="css/2.0_Variables.css">
-    <script src="js/1.2_CreaciónProyecto.js"></script>
-    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -38,10 +36,13 @@
                 <h4 class="Jugar">Jugar</h4>
                 <button class="next-btn" onclick="navigateToNextPage()">&#9654;</button>
             </div>
-
-
         </div>
     </div>
+    <script>
+        sessionStorage.setItem("NuevaLeccionMasAlta", 1);
+    </script>
+    <script src="js/1.2_CreaciónProyecto.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

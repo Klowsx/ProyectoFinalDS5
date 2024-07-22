@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   mostrarNombreUsuario();
+  actualizarPuntosUsuario(); // Llama a la función para actualizar los puntos
   document.getElementById("btnCerrarSesion").addEventListener("click", cerrarSesion);
 });
 
@@ -48,17 +49,22 @@ function marcarLeccionCompletada(leccionMasAlta) {
   }
 }
 
+function actualizarPuntosUsuario() {
+  var idUsuario = sessionStorage.getItem("idUsuario");
+
+  if (idUsuario) {
+    fetch(`http://localhost:8080/puntos/${idUsuario}`) // Ajusta la URL según tu configuración
+      .then((response) => response.json())
+      .then((data) => {
+        var puntos = data; // Suponiendo que el servidor devuelve un número entero
+        sessionStorage.setItem("puntos", puntos); // Actualiza el sessionStorage
+        document.getElementById("cantMonedas").textContent = puntos; // Actualiza el contenido en la página
+      })
+      .catch((error) => console.error("Error al obtener puntos:", error));
+  }
+}
+
 function cerrarSesion() {
   sessionStorage.clear();
   window.location.href = "http://127.0.0.1:5500/src/main/resources/templates/0.1_Login.html";
 }
-
-/*
-function verificarSesion() {
-  // Verificar si la sesión está activa
-  var usuarioAlmacenado = sessionStorage.getItem("Usuario");
-  if (!usuarioAlmacenado) {
-    // Si no hay información de sesión, redirigir a la página de inicio de sesión
-    window.location.href = "http://127.0.0.1:5500/src/main/resources/templates/Login.html";
-  }
-} */

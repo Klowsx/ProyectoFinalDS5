@@ -32,6 +32,17 @@ public class RegistroController {
     @PutMapping("/puntos")
     public boolean RegistrarPuntos(@RequestBody Usuario usuario) {
         RegistroDb registroDb = new RegistroDb();
-        return registroDb.registrarPuntosUsuario(usuario);
+        return registroDb.registrarPuntosUsuario(usuario.getIdUsuario(), usuario.getPuntos());
     }
+
+    @GetMapping("/puntos/{id}")
+    public int obtenerPuntos(@PathVariable int id) {
+        return new RegistroDb().obtenerPuntosUsuario(id);
+    }
+
+    @PutMapping("/leccionMasAlta")
+    public boolean actualizarLeccionMasAlta(@RequestBody Usuario usuario) {
+        return new RegistroDb().actualizarLeccionMasAlta(usuario.getIdUsuario(), usuario.getLeccionMasAlta());
+    }
+
 }

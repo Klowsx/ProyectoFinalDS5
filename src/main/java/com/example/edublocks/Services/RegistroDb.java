@@ -1,6 +1,8 @@
 package com.example.edublocks.Services;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.edublocks.Models.Usuario;
 
@@ -59,14 +61,13 @@ public class RegistroDb {
         return null;
     }
 
-    public boolean registrarPuntosUsuario(Usuario usuario) {
+    public boolean registrarPuntosUsuario(int idUsuario, int puntos) {
         boolean resultado = false;
-        String query = "EXEC UpdateUserPoints @UserID = ?, @puntos = ?";
-        
-        try {
-            PreparedStatement pstmt = _cn.prepareStatement(query);
-            pstmt.setInt(1, usuario.getIdUsuario());
-            pstmt.setInt(2, usuario.getPuntos());
+        String query = "UPDATE Users SET Puntos = Puntos + ? WHERE IdUsuario = ?";
+
+        try (PreparedStatement pstmt = _cn.prepareStatement(query)) {
+            pstmt.setInt(1, puntos);
+            pstmt.setInt(2, idUsuario);
 
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {
@@ -78,4 +79,80 @@ public class RegistroDb {
 
         return resultado;
     }
+
+    public int obtenerPuntosUsuario(int idUsuario) {
+        String query = "SELECT Puntos FROM Users WHERE IdUsuario = ?";
+        int puntos = 0;
+        try {
+            PreparedStatement pstmt = _cn.prepareStatement(query);
+            pstmt.setInt(1, idUsuario);
+            ResultSet result = pstmt.executeQuery();
+
+            if (result.next()) {
+                puntos = result.getInt("Puntos");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return puntos;
+    }
+
+    public boolean actualizarLeccionMasAlta(int idUsuario, int idLeccion) {
+        String query = "UPDATE Users SET LeccionMasAlta = ? WHERE IdUsuario = ?";
+        try (PreparedStatement pstmt = _cn.prepareStatement(query)) {
+            pstmt.setInt(1, idLeccion);
+            pstmt.setInt(2, idUsuario);
+
+            int affectedRows = pstmt.executeUpdate();
+            return affectedRows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<Usuario> obtenerTodosUsuarios() {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT u.IdUsuario, u.Usuario, u.Correo, u.Contrasena, u.Puntos, u.LeccionMasAlta, l.NombreLeccion, u.codRol "
+                + "FROM Users u "
+                + "INNER JOIN Lecciones l ON u.LeccionMasAlta = l.IdLeccion";
+        try (Statement stmt = _cn.createStatement();
+                ResultSet result = stmt.executeQuery(query)) {
+
+            while (result.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(result.getInt("IdUsuario"));
+                usuario.setUsuario(result.getString("Usuario"));
+                usuario.setCorreo(result.getString("Correo"));
+                usuario.setContrasena(result.getString("Contrasena"));
+                usuario.setPuntos(result.getInt("Puntos"));
+                usuario.setLeccionMasAlta(result.getInt("LeccionMasAlta"));
+                usuario.setNombreLeccion(result.getString("NombreLeccion"));
+                usuario.setCodRol(result.getInt("codRol"));
+
+                usuarios.add(usuario);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
+    }
+
+    public boolean eliminarUsuario(int idUsuario) {
+        String query = "DELETE FROM Users WHERE idUsuario = ?";
+        boolean eliminado = false;
+
+        try (PreparedStatement pstmt = _cn.prepareStatement(query)) {
+            pstmt.setInt(1, idUsuario);
+            int rowsAffected = pstmt.executeUpdate();
+            eliminado = rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return eliminado;
+    }
+
 }
