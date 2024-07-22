@@ -9,7 +9,7 @@ public class Conexion {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             return DriverManager.getConnection(
-                    "jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=ProyectoDS5",
+                    "jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=DS5",
                     "sa", "12345");
         } catch (SQLException e) {
             e.printStackTrace();

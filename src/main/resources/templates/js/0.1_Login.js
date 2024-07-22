@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8080";
+let baseUrl = "http://localhost:8080"
 
 function cerrarMensajeError() {
   document.getElementById("mensajeErrorBarra").style.display = "none";

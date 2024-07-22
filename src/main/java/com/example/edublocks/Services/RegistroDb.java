@@ -58,4 +58,24 @@ public class RegistroDb {
         }
         return null;
     }
+
+    public boolean registrarPuntosUsuario(Usuario usuario) {
+        boolean resultado = false;
+        String query = "EXEC UpdateUserPoints @UserID = ?, @puntos = ?";
+        
+        try {
+            PreparedStatement pstmt = _cn.prepareStatement(query);
+            pstmt.setInt(1, usuario.getIdUsuario());
+            pstmt.setInt(2, usuario.getPuntos());
+
+            int affectedRows = pstmt.executeUpdate();
+            if (affectedRows > 0) {
+                resultado = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultado;
+    }
 }
